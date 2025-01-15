@@ -413,26 +413,27 @@ body {
   padding: 0.2rem;
 }
 .main .table .summary .right .gst span {
-  text-align: left;
+  text-align: center;
   width: 1rem;
+  padding: 0.1rem 0rem;
 }
 .main .table .summary .right .gst input {
   border: none;
-  padding: 0.1rem 0.3rem;
+  padding: 0.1rem 0rem;
 }
 .main .table .summary .right .gst input:nth-of-type(1) {
-  text-align: left;
-  width: 3rem;
+  text-align: center;
+  width: 2rem;
 }
 .main .table .summary .right .gst input:nth-of-type(1)::after {
   content: "%";
   color: blue;
   border: 2px solid red;
-  margin-left: 5px;
+  margin-left: 0px;
 }
 .main .table .summary .right .gst input:nth-of-type(2) {
   text-align: right;
-  width: 5rem;
+  width: 6rem;
 }
 .main .footer {
   display: flex;
@@ -452,7 +453,6 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
 .main .footer .bank-details .details span {
   width: 6rem;
@@ -461,30 +461,11 @@ body {
   width: 10rem;
   font-family: "Open Sans", serif;
 }
-.main .footer .bank-details .details img {
-  height: 15rem;
-}
-.main .footer .bank-details .details .info {
-  width: 100%;
-}
-.main .footer .bank-details .details .info p {
-  text-align: center;
-  width: 100%;
-  font-size: 0.7rem;
-}
 .main .footer .bank-details .details-payment {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  position: relative;
-}
-.main .footer .bank-details .details-payment span {
-  width: 6rem;
-}
-.main .footer .bank-details .details-payment p {
-  width: 10rem;
-  font-family: "Open Sans", serif;
 }
 .main .footer .bank-details .details-payment img {
   height: 15rem;
@@ -527,6 +508,9 @@ body {
   align-items: center;
   justify-content: space-between;
   padding: 1rem 0rem;
+}
+.main .footer .stamp-with-sign h3 {
+  font-size: 0.8rem;
 }
 .main .footer .stamp-with-sign .stamp-sign {
   display: flex;
