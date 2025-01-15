@@ -51,4 +51,35 @@
     height: 7rem !important;
     width: 35rem !important;
   }
+  .footer .bank-details .details span {
+    width: 6rem;
+  }
+  .footer .bank-details .details p {
+    width: 10rem;
+  }
+  .footer .bank-details .details-payment img {
+    height: 15rem;
+  }
+  .footer .bank-details .details-payment .info {
+    width: 100%;
+  }
+  .footer .bank-details .details-payment .info p {
+    width: 100%;
+    font-size: 0.7rem;
+  }
+  .footer .terms-conditions textarea {
+    height: 9rem;
+    width: 27rem;
+  }
+  .footer .stamp-with-sign h3 {
+    font-size: 0.7rem !important;
+  }
+  .footer .stamp-with-sign .stamp-sign {
+    height: 5rem;
+    width: 6.5rem;
+  }
+  .footer .stamp-with-sign .stamp-sign img {
+    height: 5rem;
+    width: 6.5rem;
+  }
 }/*# sourceMappingURL=style_print.css.map */
