@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/style_print.css">
+</head>
+<body>
+    <div class="main">
+        <div class="main-heading">
+            <h1 class="head">Quotation</h1>
+            <p>Original Copy</p>
+        </div> <br> <hr>
+        
+        <div class="main-detail">
+            <div class="company-info">
+                <h3>Sharma Gas Service <span>&#174;</span> </h3>
+                <p>S-452, Gali No-18, Prem Nagar-II, Kirari, New Delhi -110086</p>
+                <p>Mobile no. : 9871901230, 7703854855</p>
+                <p>Email: sharmagasservice452@gmail.com</p>
+                <p>Website: www.sharmagasservice.in</p>
+                <p>GST No - 07CLDPS5757C3ZV</p>
+            </div>
+            <div class="logo">
+                <img src="./images/sgs_logo_old.svg" alt="sharma-gas-servu" srcset="">
+            </div>
+        </div> <hr> <br>
+        
+        <div class="buyer">
+            <div class="buyer-details">
+                <h3>Buyer Details</h3>
+                <input type="text" placeholder="Customer name">
+                <textarea id="w3review" name="w3review" rows="3" placeholder="Add Customer Details..."></textarea>
+            </div>
+            <div class="invoice-info">
+                <div class="quotation">
+                    <div class="quotation-no">
+                        <label for="quotation-no">Quotation #</label>
+                        <input name="quotation-no" type="text" placeholder="SGS-XXXX">
+                    </div>
+                    <div class="quotation-date non-printable-format">
+                        <label for="quotation-date">Date</label>
+                        <input name="quotation-date" id="quotation-date" type="date">
+                    </div>
+                </div>
+                
+                <div class="contact-person">
+                    <p>Contact Person</p>
+                    <div class="person">
+                        <label for="person-name">Name</label>
+                        <input name="person-name" type="text" placeholder="Person Name">
+                    </div>
+                    <div class="contact">
+                        <label for="contact-no">Mob</label>
+                        <input name="contact-no" type="text"  placeholder="+91XXXXXXXXXX">
+                    </div>
+                </div>
+            </div>
+        </div> <hr>
+
+        <div class="table">
+            <!-- <h1>Goods Information</h1> -->
+            <table class="styled-table" id="goodsTable">
+              <thead>
+                <tr>
+                  <th style="width: 02rem;">SN</th>
+                  <th style="width: 28rem">Description of Goods</th>
+                  <th style="width: 06rem;">Make</th>
+                  <th style="width: 06rem;">Quantity</th>
+                  <th style="width: 06rem;">Unit</th>
+                  <th style="width: 06rem;">Rate</th>
+                  <th style="width: auto;">Amount</th>
+                </tr>
+              </thead>
+              <tbody>
+                <!-- Rows will be added here -->
+                
+              </tbody>
+            </table>
+
+            <div class="new-btn">
+                <button id="addRowBtn" class="add-row-btn">+</button>
+            </div>
+            
+            <div class="summary">
+                <div class="right">
+                    <div class="sub-total">
+                        <label for="sub-total">Total</label>
+                        <input type="number" name="sub-total">
+                    </div>
+                    <div class="gst">
+                        <label for="gst">GST @</label>
+                        <input type="number" value="18.0" name="gst-perc"><span>%</span><input type="number" name="gst">
+                    </div>
+                    <div class="total">
+                        <label for="total">Grand Total</label>
+                        <input type="number" name="total">
+                    </div>
+                </div>
+            </div>
+        </div><hr>
+
+        <div class="footer">
+            <div class="bank-details">
+                <h3>Bank Details</h3>
+                <div class="details"><span>Payee : </span><p>SHARMA GAS SERVICE</p></div>
+                <div class="details"><span>Bank Name : </span><p>ICICI Bank</p></div>
+                <div class="details"><span>Account No : </span><p>028805005109</p></div>
+                <div class="details"><span>IFSC Code : </span><p>ICIC0000288</p></div>
+                <div class="details"><span>Branch : </span><p>Mirabag Pashchim Vihar</p></div>
+                <div class="details-payment">
+                    <img src="./images/upi-praveen-sharma.jpg" alt="upi-praveen-sharma" srcset="">
+                    <div class="info">
+                        <p>PRAVEEN KUMAR SHARMA</p>
+                        <p>SHARMA GAS SERVICE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="terms-conditions">
+                <h3>Terms & Conditions</h3>
+                <textarea name="" id="" cols="30" rows="5" placeholder="Add terms & Conditions...">
+1.Payment 50% Advance With The Confirmation of Order.
+2.Payment 30% before dispatch the Material 
+3.Payment 20% after completion the work.</textarea>
+            </div>
+            <div class="stamp-with-sign">
+                <h4>For SHARMA GAS SERVICE</h4>
+                <div class="stamp-sign">
+                    <img src="./images/sgs-stamp-with-sign.svg" alt="sharma-gas-service-stamp" srcset="">
+                </div>
+                <p>Authorized Signatory</p>
+            </div>
+        </div>
+    </div>
+    <div class="actions non-printable" >
+        <button class="print-button" onclick="window.print()">Print</button>
+    </div>
+    
+    <script src="./script/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,54 @@
+/* Style for print */
+@media print {
+  @page {
+    size: auto; /* Specify A4 size */
+    margin: 0; /* Remove default margins */
+  }
+  html, body {
+    width: 100%; /* A4 width */
+    height: 100%; /* A4 height */
+    border: none;
+    margin: 0mm;
+    padding: 0mm; /* Optional padding */
+    overflow: visible;
+    -webkit-print-color-adjust: exact; /* For WebKit browsers */
+    print-color-adjust: exact; /* For modern browsers */
+  }
+  .non-printable {
+    display: none !important; /* Hide non-printable elements */
+  }
+  .non-printable-format {
+    /* For Firefox */
+  }
+  .non-printable-format input[type=number] {
+    -moz-appearance: textfield !important; /* For Chrome, Safari, Edge, and Opera */
+  }
+  .non-printable-format input[type=number]::-webkit-inner-spin-button, .non-printable-format input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none !important;
+  }
+  .non-printable-format input[type=date]::-webkit-inner-spin-button,
+  .non-printable-format input[type=date]::-webkit-calendar-picker-indicator {
+    display: none !important;
+    appearance: none !important;
+    -webkit-appearance: none !important;
+    -moz-appearance: none !important; /* For Firefox */
+  }
+  .non-printable-format select {
+    appearance: none !important; /* Remove dropdown icon */
+    -webkit-appearance: none !important; /* For WebKit browsers */
+    -moz-appearance: none !important; /* For Firefox */
+  }
+  .buyer-details {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: stretch;
+  }
+  .buyer-details input {
+    width: 35rem !important;
+  }
+  .buyer-details textarea {
+    height: 7rem !important;
+    width: 35rem !important;
+  }
+}/*# sourceMappingURL=style_print.css.map */

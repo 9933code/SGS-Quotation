@@ -1,0 +1,561 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", serif;
+}
+
+html {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  margin: 0.5rem;
+}
+
+body {
+  margin: 0;
+  padding: 0.5rem;
+  width: 60rem;
+}
+
+.main {
+  border-radius: 5px;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  padding: 1rem;
+}
+.main .main-heading {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+}
+.main .main-heading p {
+  font-size: smaller;
+}
+.main .main-detail {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0.5rem 0rem;
+}
+.main .main-detail .company-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.main .main-detail .company-info h3 {
+  position: relative;
+}
+.main .main-detail .company-info h3 span {
+  position: absolute;
+  right: -0.5rem;
+  top: -0.5rem;
+}
+.main .main-detail .company-info p {
+  font-size: small;
+}
+.main .main-detail .logo {
+  height: 8rem;
+  width: 12rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.main .main-detail .logo img {
+  height: 12rem;
+  width: 12rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.main .buyer {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.main .buyer .buyer-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: stretch;
+}
+.main .buyer .buyer-details h3 {
+  position: relative;
+}
+.main .buyer .buyer-details input {
+  width: 35rem;
+  font-size: medium;
+  font-weight: bold;
+  border: none;
+  background: transparent;
+}
+.main .buyer .buyer-details input:-moz-placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+  font-weight: bold;
+}
+.main .buyer .buyer-details input:placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+  font-weight: bold;
+}
+.main .buyer .buyer-details textarea {
+  font-size: small;
+  height: 7rem;
+  width: 35rem;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  border: none;
+  resize: vertical;
+  overflow: auto;
+  background: transparent;
+}
+.main .buyer .buyer-details textarea:-moz-placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+  font-weight: bold;
+}
+.main .buyer .buyer-details textarea:placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+  font-weight: bold;
+}
+.main .buyer .invoice-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+.main .buyer .invoice-info .quotation {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0.5rem;
+}
+.main .buyer .invoice-info .quotation .quotation-no, .main .buyer .invoice-info .quotation .quotation-date {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.main .buyer .invoice-info .quotation .quotation-no label, .main .buyer .invoice-info .quotation .quotation-date label {
+  width: 7rem;
+}
+.main .buyer .invoice-info .quotation .quotation-no input, .main .buyer .invoice-info .quotation .quotation-date input {
+  width: 10rem;
+  border: none;
+  font-weight: bold;
+}
+.main .buyer .invoice-info .quotation .quotation-no input:-moz-placeholder-shown, .main .buyer .invoice-info .quotation .quotation-date input:-moz-placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+  font-weight: bold;
+}
+.main .buyer .invoice-info .quotation .quotation-no input:placeholder-shown, .main .buyer .invoice-info .quotation .quotation-date input:placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+  font-weight: bold;
+}
+.main .buyer .invoice-info .quotation .quotation-no input[type=date], .main .buyer .invoice-info .quotation .quotation-date input[type=date] {
+  -moz-appearance: none;
+       appearance: none;
+  -webkit-appearance: none;
+  border: none;
+}
+.main .buyer .invoice-info .quotation .quotation-no input[type=date]:-moz-placeholder-shown, .main .buyer .invoice-info .quotation .quotation-date input[type=date]:-moz-placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+  font-weight: bold;
+}
+.main .buyer .invoice-info .quotation .quotation-no input[type=date]:placeholder-shown, .main .buyer .invoice-info .quotation .quotation-date input[type=date]:placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+  font-weight: bold;
+}
+.main .buyer .invoice-info .contact-person {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 0.5rem;
+}
+.main .buyer .invoice-info .contact-person p {
+  text-decoration: underline;
+}
+.main .buyer .invoice-info .contact-person .person, .main .buyer .invoice-info .contact-person .contact {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+}
+.main .buyer .invoice-info .contact-person .person label, .main .buyer .invoice-info .contact-person .contact label {
+  width: 4rem;
+}
+.main .buyer .invoice-info .contact-person .person input, .main .buyer .invoice-info .contact-person .contact input {
+  width: 13rem;
+  border: none;
+  font-weight: bold;
+}
+.main .buyer .invoice-info .contact-person .person input:-moz-placeholder-shown, .main .buyer .invoice-info .contact-person .contact input:-moz-placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+  font-weight: bold;
+}
+.main .buyer .invoice-info .contact-person .person input:placeholder-shown, .main .buyer .invoice-info .contact-person .contact input:placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+  font-weight: bold;
+}
+.main .table {
+  width: 100%;
+  min-height: 16rem;
+  margin: 0.5rem 0rem;
+  background-color: #fff;
+  border: 1px solid #006550;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .table .styled-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+.main .table .styled-table .sn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  font-size: 0.8rem;
+}
+.main .table .styled-table .sn .remove-row-btn {
+  position: absolute;
+  display: none;
+  top: 0%;
+  left: -70%;
+  height: 1.2rem;
+  width: 1.2rem;
+  background-color: #ff4d4d;
+  color: #ffffff;
+  cursor: pointer;
+  border: none;
+  border-radius: 0.2rem;
+}
+.main .table .styled-table .sn .remove-row-btn:hover {
+  background-color: #e60000;
+}
+.main .table .styled-table th, .main .table .styled-table td {
+  padding: 0.1rem 0.1rem;
+  text-align: left;
+}
+.main .table .styled-table th .remove-btn, .main .table .styled-table td .remove-btn {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+.main .table .styled-table th .input-no input, .main .table .styled-table td .input-no input {
+  text-align: right;
+}
+.main .table .styled-table thead {
+  background-color: #009879;
+  color: #ffffff;
+}
+.main .table .styled-table tbody tr:nth-child(even) {
+  background-color: #f3f3f3;
+}
+.main .table .styled-table tbody tr:nth-child(odd) {
+  background-color: #ffffff;
+}
+.main .table .styled-table tbody tr:hover {
+  background-color: #d1e7dd;
+}
+.main .table .styled-table tbody tr:hover .remove-row-btn {
+  display: block;
+}
+.main .table .styled-table input, .main .table .styled-table textarea {
+  width: 100%;
+  height: 1.5rem;
+  line-height: 1rem;
+  padding: 0.2rem;
+  border: none;
+  text-align: left;
+  border-radius: 0.2rem;
+  font-size: 0.8rem;
+  background: transparent;
+}
+.main .table .styled-table input:focus, .main .table .styled-table textarea:focus {
+  border-color: #009879;
+}
+.main .table .styled-table input:-moz-placeholder-shown, .main .table .styled-table textarea:-moz-placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+}
+.main .table .styled-table input:placeholder-shown, .main .table .styled-table textarea:placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+}
+.main .table .styled-table select {
+  width: 100%;
+  padding: 0.1rem;
+  box-sizing: border-box;
+  border: none;
+  border-radius: 0.2rem;
+  background-color: transparent;
+}
+.main .table .styled-table select:focus {
+  border-color: #009879;
+}
+.main .table:hover .new-btn {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  position: relative;
+  right: -50%;
+}
+.main .table:hover .new-btn .add-row-btn {
+  margin: 0.2rem;
+  padding: 0rem;
+  background-color: #009879;
+  color: #ffffff;
+  border: none;
+  cursor: pointer;
+  font-size: 1rem;
+  height: 2rem;
+  width: 2rem;
+  border-radius: 50%;
+}
+.main .table:hover .new-btn .add-row-btn:hover {
+  background-color: #006550;
+}
+.main .table .new-btn {
+  display: none;
+}
+.main .table .summary {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  font-size: 0.8rem;
+}
+.main .table .summary .right {
+  /* For Chrome, Safari, Edge, and Opera */
+  /* For Firefox */
+}
+.main .table .summary .right input[type=number]::-webkit-inner-spin-button,
+.main .table .summary .right input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.main .table .summary .right input[type=number] {
+  -moz-appearance: textfield;
+}
+.main .table .summary .right .sub-total {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  border-bottom: 1px solid grey;
+}
+.main .table .summary .right .sub-total label {
+  text-align: left;
+  width: 7rem;
+  font-weight: bold;
+  padding: 0.2rem;
+}
+.main .table .summary .right .sub-total input {
+  text-align: right;
+  border: none;
+  width: 5rem;
+  padding: 0.1rem 0.3rem;
+  font-weight: bold;
+}
+.main .table .summary .right .total {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+}
+.main .table .summary .right .total label {
+  text-align: left;
+  width: 7rem;
+  font-weight: bold;
+  padding: 0.2rem;
+}
+.main .table .summary .right .total input {
+  text-align: right;
+  border: none;
+  width: 5rem;
+  padding: 0.1rem 0.3rem;
+  font-weight: bold;
+}
+.main .table .summary .right .gst {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-end;
+  justify-content: center;
+  border-bottom: 1px solid grey;
+}
+.main .table .summary .right .gst label {
+  text-align: left;
+  width: 3rem;
+  padding: 0.2rem;
+}
+.main .table .summary .right .gst span {
+  text-align: left;
+  width: 1rem;
+}
+.main .table .summary .right .gst input {
+  border: none;
+  padding: 0.1rem 0.3rem;
+}
+.main .table .summary .right .gst input:nth-of-type(1) {
+  text-align: left;
+  width: 3rem;
+}
+.main .table .summary .right .gst input:nth-of-type(1)::after {
+  content: "%";
+  color: blue;
+  border: 2px solid red;
+  margin-left: 5px;
+}
+.main .table .summary .right .gst input:nth-of-type(2) {
+  text-align: right;
+  width: 5rem;
+}
+.main .footer {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  font-size: small;
+}
+.main .footer .bank-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.main .footer .bank-details .details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.main .footer .bank-details .details span {
+  width: 6rem;
+}
+.main .footer .bank-details .details p {
+  width: 10rem;
+  font-family: "Open Sans", serif;
+}
+.main .footer .bank-details .details img {
+  height: 15rem;
+}
+.main .footer .bank-details .details .info {
+  width: 100%;
+}
+.main .footer .bank-details .details .info p {
+  text-align: center;
+  width: 100%;
+  font-size: 0.7rem;
+}
+.main .footer .bank-details .details-payment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+}
+.main .footer .bank-details .details-payment span {
+  width: 6rem;
+}
+.main .footer .bank-details .details-payment p {
+  width: 10rem;
+  font-family: "Open Sans", serif;
+}
+.main .footer .bank-details .details-payment img {
+  height: 15rem;
+}
+.main .footer .bank-details .details-payment .info {
+  width: 100%;
+}
+.main .footer .bank-details .details-payment .info p {
+  text-align: center;
+  width: 100%;
+  font-size: 0.7rem;
+}
+.main .footer .terms-conditions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.main .footer .terms-conditions textarea {
+  font-size: small;
+  border: none;
+  resize: vertical;
+  border: none;
+  height: 9rem;
+  width: 27rem;
+}
+.main .footer .terms-conditions textarea:-moz-placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+  font-weight: bold;
+}
+.main .footer .terms-conditions textarea:placeholder-shown {
+  border-color: #3498db;
+  background-color: #f0f9ff;
+  font-weight: bold;
+}
+.main .footer .stamp-with-sign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0rem;
+}
+.main .footer .stamp-with-sign .stamp-sign {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 5rem;
+  width: 6.5rem;
+}
+.main .footer .stamp-with-sign .stamp-sign img {
+  height: 5rem;
+  width: 6.5rem;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+.actions .print-button {
+  margin: 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.2rem;
+  border: none;
+  color: white;
+  background-color: #009879;
+  font-weight: bold;
+}
+.actions .print-button:hover {
+  background-color: #006550;
+}/*# sourceMappingURL=style.css.map */
