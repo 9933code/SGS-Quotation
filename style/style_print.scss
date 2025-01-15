@@ -75,58 +75,54 @@
             width: 35rem !important;
         }
     }
-    // .table {
-    //     margin: 0 !important;
-    //     border: none !important;
+    
+    .footer{
+        .bank-details{
+            .details{
+                span{
+                    width: 6rem;
+                }
+                p{
+                    width: 10rem;
+                }
+            }
 
-    //     .styled-table {
-    //         // width: 100%;
-    //         border-collapse: collapse !important;
-    //         border: none !important;
+            .details-payment{
+                img{
+                    height: 15rem;
+                }
+                .info{
+                    width: 100%;
+                    p{  
+                        width: 100%;
+                        font-size: 0.7rem;
+                    }
+                }
 
-    //         thead {
-    //             background-color: #009879 !important;
-    //             color: #ffffff !important;
-    //             border-bottom: 1px solid grey !important;
-    //         }
+            }
 
-    //         tbody{
-    //             tr{
-    //                 &:nth-child(even) { background-color: #f3f3f3 !important; }
-    //                 &:nth-child(odd) { background-color: #ffffff !important; }
-    //                 border-bottom: 1px solid grey !important;
-    //             }
-    //         }
+        }
 
-    //         input, textarea {
-    //             width: 100%;
-    //             height: 1.5rem;
-    //             line-height: 1rem;
-    //             padding: 0.2rem;
-    //             border: none; // border: 1px solid $input-border;
-    //             text-align: left;
-    //             border-radius: 0.2rem;
-    //             font-size: 0.8rem;
-    //             background: transparent !important;
+        .terms-conditions{
+            textarea{
+                height: 9rem;
+                width: 27rem;
+            }
+        }
 
-    //             &:placeholder-shown {
-    //                 border-color: #3498db !important;
-    //                 background-color: #f0f9ff !important;
-    //             }
-    //         }
+        .stamp-with-sign{
+            h3{
+                font-size: 0.7rem !important;
+            }
+            .stamp-sign{
+                height: 5rem;
+                width: 6.5rem;
 
-    //         select {
-    //             width: 100%;
-    //             padding: 0.1rem;
-    //             box-sizing: border-box !important;
-    //             border: none !important;
-    //             border-radius: 0.2rem;
-    //             background-color: transparent !important;
-
-    //             appearance: none !important;            /* Remove dropdown icon */
-    //             -webkit-appearance: none !important;    /* For WebKit browsers */
-    //             -moz-appearance: none !important;       /* For Firefox */
-    //         }
-    //     }
-    // }
+                img{
+                    height: 5rem;
+                    width: 6.5rem;
+                }
+            }
+        }
+    }  
 }
