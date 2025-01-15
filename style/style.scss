@@ -407,28 +407,28 @@ body{
                     }
 
                     span{
-                        text-align: left;
+                        text-align: center;
                         width: 1rem;
-                        // padding: 0.2rem;
+                        padding: 0.1rem 0rem;
                     }
 
                     input{
                         border: none;
-                        padding: 0.1rem 0.3rem;
+                        padding: 0.1rem 0rem;
                         &:nth-of-type(1) {
-                            text-align: left;
-                            width: 3rem;
+                            text-align: center;
+                            width: 2rem;
 
                             &::after{
                                 content: "%";
                                 color: blue;
                                 border: 2px solid red;
-                                margin-left: 5px;
+                                margin-left: 0px;
                             }
                         }
                         &:nth-of-type(2) {
                             text-align:right;
-                            width: 5rem;
+                            width: 6rem;
                         }
                     }
                     
@@ -458,7 +458,7 @@ body{
 
             .details-payment{
                 @include flex-parent(flex, column, center, space-between);
-                }
+                
                 img{
                     height: 15rem;
                 }
@@ -496,6 +496,10 @@ body{
         .stamp-with-sign{
             @include flex-parent(flex, column, center, space-between);
             padding: 1rem 0rem;
+
+            h3{
+                font-size: 0.8rem;
+            }
             .stamp-sign{
                 @include flex-parent(flex, column, center, center);
                 height: 5rem;
@@ -507,9 +511,7 @@ body{
                 }
             }
         }
-    }
-
-
+    }    
 }
 
 .actions{
