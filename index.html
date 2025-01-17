@@ -31,14 +31,14 @@
         <div class="buyer">
             <div class="buyer-details">
                 <h3>Buyer Details</h3>
-                <input type="text" placeholder="Customer name">
-                <textarea id="w3review" name="w3review" rows="3" placeholder="Add Customer Details..."></textarea>
+                <input type="text" placeholder="Customer name" name="customer-name">
+                <textarea id="w3review" rows="3" placeholder="Add Customer Details..." name="customer-details"></textarea>
             </div>
             <div class="invoice-info">
                 <div class="quotation">
                     <div class="quotation-no">
                         <label for="quotation-no">Quotation #</label>
-                        <input name="quotation-no" type="text" placeholder="SGS-XXXX">
+                        <input id="quotation-no" name="quotation-no" type="text" placeholder="SGS-XXXX">
                     </div>
                     <div class="quotation-date non-printable-format">
                         <label for="quotation-date">Date</label>
@@ -136,7 +136,7 @@
     </div>
 
     <div class="actions non-printable" >
-        <button class="print-button" onclick="window.print()">Print</button>
+        <button class="print-button" onclick="window.print(); save();">Print</button>
     </div>
     
     <script src="./script/script.js"></script>

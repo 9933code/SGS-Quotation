@@ -1,27 +1,140 @@
-/* Style for print */
-@media print {
+// /* Style for print */
+// @media print {
 
-    @mixin flex-parent($display, $flex-direction, $align-items, $justify-content){
-        @if $display         != null  { display       : $display;         }
-        @if $flex-direction  != null  { flex-direction: $flex-direction;  }
-        @if $align-items     != null  {align-items    : $align-items;     }
-        @if $justify-content != null  {justify-content: $justify-content; }
-    }
+//     @mixin flex-parent($display, $flex-direction, $align-items, $justify-content){
+//         @if $display         != null  { display       : $display;         }
+//         @if $flex-direction  != null  { flex-direction: $flex-direction;  }
+//         @if $align-items     != null  {align-items    : $align-items;     }
+//         @if $justify-content != null  {justify-content: $justify-content; }
+//     }
     
+//     @page {
+//         // size: A4; /* Specify A4 size */
+//         size: auto; /* Specify A4 size */
+//         margin: 0; /* Remove default margins */
+//     }
+
+//     html, body {
+//         // width: 210mm; /* A4 width */
+//         width: 100%; /* A4 width */
+//         // height: auto; /* A4 height */
+//         height: 100%; /* A4 height */
+//         border: none;
+//         margin: 0mm;
+//         padding: 0mm; /* Optional padding */
+//         overflow: visible;
+//         -webkit-print-color-adjust: exact; /* For WebKit browsers */
+//         print-color-adjust: exact; /* For modern browsers */
+//     }
+
+//     .non-printable {
+//         display: none !important; /* Hide non-printable elements */
+//     }
+
+//     .non-printable-format{
+        
+//         /* For Firefox */
+//         input[type="number"] {
+//             -moz-appearance: textfield !important; /* For Chrome, Safari, Edge, and Opera */
+//             &::-webkit-inner-spin-button,
+//             &::-webkit-outer-spin-button {
+//                 -webkit-appearance: none !important;
+//             }
+//         }
+
+//         input[type="date"]::-webkit-inner-spin-button,
+//         input[type="date"]::-webkit-calendar-picker-indicator {
+//             display: none !important;
+//             appearance: none !important;
+//             -webkit-appearance: none !important;
+//             -moz-appearance: none !important;       /* For Firefox */
+//         }
+
+//         select {
+//             appearance: none !important;            /* Remove dropdown icon */
+//             -webkit-appearance: none !important;    /* For WebKit browsers */
+//             -moz-appearance: none !important;       /* For Firefox */
+//         }
+//     }
+
+//     .buyer-details{
+//         @include flex-parent(flex, column, flex-start, stretch);
+
+//         input{
+//             width: 35rem !important;
+//         }
+
+//         textarea{
+//             height: 7rem !important;
+//             width: 35rem !important;
+//         }
+//     }
+    
+//     .footer{
+//         .bank-details{
+//             .details{
+//                 span{
+//                     width: 6rem;
+//                 }
+//                 p{
+//                     width: 10rem;
+//                 }
+//             }
+
+//             .details-payment{
+//                 img{
+//                     height: 15rem;
+//                 }
+//                 .info{
+//                     width: 100%;
+//                     p{  
+//                         width: 100%;
+//                         font-size: 0.7rem;
+//                     }
+//                 }
+
+//             }
+
+//         }
+
+//         .terms-conditions{
+//             textarea{
+//                 height: 9rem;
+//                 width: 27rem;
+//             }
+//         }
+
+//         .stamp-with-sign{
+//             h3{
+//                 font-size: 0.7rem !important;
+//             }
+//             .stamp-sign{
+//                 height: 5rem;
+//                 width: 6.5rem;
+
+//                 img{
+//                     height: 5rem;
+//                     width: 6.5rem;
+//                 }
+//             }
+//         }
+//     }  
+// }
+
+
+
+
+@media print {
     @page {
-        // size: A4; /* Specify A4 size */
-        size: auto; /* Specify A4 size */
+        size: auto; /* Automatically adjust page size */
         margin: 0; /* Remove default margins */
     }
 
     html, body {
-        // width: 210mm; /* A4 width */
-        width: 100%; /* A4 width */
-        // height: auto; /* A4 height */
-        height: 100%; /* A4 height */
-        border: none;
-        margin: 0mm;
-        padding: 0mm; /* Optional padding */
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        padding: 0;
         overflow: visible;
         -webkit-print-color-adjust: exact; /* For WebKit browsers */
         print-color-adjust: exact; /* For modern browsers */
@@ -29,6 +142,11 @@
 
     .non-printable {
         display: none !important; /* Hide non-printable elements */
+    }
+
+    /* Avoid page breaks within elements */
+    * {
+        page-break-inside: avoid !important;
     }
 
     .non-printable-format{
@@ -41,12 +159,6 @@
                 -webkit-appearance: none !important;
             }
         }
-
-        // input[type="date"] {
-        //     appearance: none !important;            /* Hide the dropdown icon */
-        //     -webkit-appearance: none !important;    /* For WebKit browsers */
-        //     -moz-appearance: none !important;       /* For Firefox */
-        // }
 
         input[type="date"]::-webkit-inner-spin-button,
         input[type="date"]::-webkit-calendar-picker-indicator {
@@ -63,66 +175,28 @@
         }
     }
 
-    .buyer-details{
-        @include flex-parent(flex, column, flex-start, stretch);
-
-        input{
-            width: 35rem !important;
-        }
-
-        textarea{
-            height: 7rem !important;
-            width: 35rem !important;
-        }
+    .buyer-details,
+    .footer {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: space-between;
     }
-    
-    .footer{
-        .bank-details{
-            .details{
-                span{
-                    width: 6rem;
-                }
-                p{
-                    width: 10rem;
-                }
-            }
 
-            .details-payment{
-                img{
-                    height: 15rem;
-                }
-                .info{
-                    width: 100%;
-                    p{  
-                        width: 100%;
-                        font-size: 0.7rem;
-                    }
-                }
+    .buyer-details input, 
+    .buyer-details textarea {
+        width: 35rem !important; /* Keep column width consistent */
+    }
 
-            }
+    .footer .bank-details img {
+        max-height: 15rem;
+        width: auto;
+    }
 
-        }
-
-        .terms-conditions{
-            textarea{
-                height: 9rem;
-                width: 27rem;
-            }
-        }
-
-        .stamp-with-sign{
-            h3{
-                font-size: 0.7rem !important;
-            }
-            .stamp-sign{
-                height: 5rem;
-                width: 6.5rem;
-
-                img{
-                    height: 5rem;
-                    width: 6.5rem;
-                }
-            }
-        }
-    }  
+    /* Scale content to fit within one page */
+    body {
+        transform: scale(1);
+        transform-origin: top left;
+        height: auto;
+    }
 }

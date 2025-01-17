@@ -27,16 +27,12 @@ $remove-btn-hover: #e60000;
 }
 
 html{
-    // @include flex-parent(flex, row, center, center);
-    // align-items: center;
-    // justify-content: center;
     padding: 1rem;
     margin : 1rem;
-    // overflow: scroll;
 }
 
 body{
-    margin: 0;
+    margin: 0 auto;
     padding: 0.5rem;
     width: 60rem;
 }
@@ -282,6 +278,7 @@ body{
                 width: 100%;
                 // height: 1.5rem;
                 height: 1.5rem;
+                // height: auto;
                 line-height: 1rem;
                 padding: 0.2rem;
                 border: none; // border: 1px solid $input-border;
@@ -448,6 +445,7 @@ body{
 
         .bank-details{
             @include flex-parent(flex, column, flex-start, space-between);
+            width: 17rem;
             .details{
                 @include flex-parent(flex, row, center, space-between);
                 span{
@@ -479,6 +477,7 @@ body{
         }
 
         .terms-conditions{
+            flex:1;
             @include flex-parent(flex, column, flex-start, space-between);
             textarea{
                 font-size: small;
@@ -486,7 +485,9 @@ body{
                 resize:vertical;
                 border: none;
                 height: 9rem;
-                width: 27rem;
+                // width: 25rem;
+                padding: 0.2rem;
+                width: 100%;
 
                 &:placeholder-shown {
                     border-color: #3498db;
@@ -498,11 +499,9 @@ body{
 
         .stamp-with-sign{
             @include flex-parent(flex, column, center, space-between);
-            padding: 1rem 0rem;
+            padding: 0.5rem;
+            width: 14rem;
 
-            h3{
-                font-size: 0.8rem;
-            }
             .stamp-sign{
                 @include flex-parent(flex, column, center, center);
                 height: 5rem;
