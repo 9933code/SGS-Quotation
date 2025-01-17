@@ -27,9 +27,12 @@ $remove-btn-hover: #e60000;
 }
 
 html{
-    @include flex-parent(flex, row, center, center);
+    // @include flex-parent(flex, row, center, center);
+    // align-items: center;
+    // justify-content: center;
     padding: 1rem;
-    margin: 0.5rem;
+    margin : 1rem;
+    // overflow: scroll;
 }
 
 body{

@@ -8,12 +8,8 @@
 }
 
 html {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
   padding: 1rem;
-  margin: 0.5rem;
+  margin: 1rem;
 }
 
 body {
