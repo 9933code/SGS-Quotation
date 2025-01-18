@@ -29,7 +29,7 @@ document.getElementById('addRowBtn').addEventListener('click', function() {
   // Setting up inputs for each cell
   // srNoCell.textContent    = tableBody.rows.length;
   srNoCell.innerHTML      = '<div class="sn"><div class="remove-btn"><button class="remove-row-btn">-</button></div>' + tableBody.rows.length + '</div>';
-  descCell.innerHTML      = '<textarea type="text"   placeholder="Enter Description"></textarea>';
+  descCell.innerHTML      = '<div class="desc"><textarea type="text"   placeholder="Enter Description"></textarea></div>';
   makeCell.innerHTML      = '<input type="text"   placeholder="Enter Make">';
   quantityCell.innerHTML  = '<div class="input-no non-printable-format"><input type="number" placeholder="Enter Qty"></div>';
   unitsCell.innerHTML     = '<div  class="non-printable-format"><select><option value="Pcs">Pcs</option><option value="Set">Set</option><option value="Meter">Meter</option><option value="Ltr">Ltr</option><option value="Unit">Unit</option><option value="Visit">Visit</option><option value="Kg">Kg</option></select></div>';
@@ -182,7 +182,7 @@ function save(){
 
 // update table for data
 document.getElementById('quotation-no').addEventListener('input', function() {
-  const quotation_no = document.getElementsByName('quotation-no')[0].value;
+  const quotation_no = document.getElementsByName('quotation-no')[0].value.toUpperCase();
 
   if (Object.keys(quotation_data).includes(quotation_no.toUpperCase())) {
     // console.log(quotation_data[quotation_no]);
@@ -221,7 +221,7 @@ function addData(items) {
     // Setting up inputs for each cell
     // srNoCell.textContent    = tableBody.rows.length;
     srNoCell.innerHTML      = '<div class="sn"><div class="remove-btn"><button class="remove-row-btn">-</button></div>' + tableBody.rows.length + '</div>';
-    descCell.innerHTML      = '<textarea type="text"   placeholder="Enter Description"></textarea>';
+    descCell.innerHTML      = '<div class="desc"><textarea type="text"   placeholder="Enter Description"></textarea></div>';
     makeCell.innerHTML      = '<input type="text"   placeholder="Enter Make">';
     quantityCell.innerHTML  = '<div class="input-no non-printable-format"><input type="number" placeholder="Enter Qty"></div>';
     unitsCell.innerHTML     = '<div  class="non-printable-format"><select><option value="Pcs">Pcs</option><option value="Set">Set</option><option value="Meter">Meter</option><option value="Ltr">Ltr</option><option value="Unit">Unit</option><option value="Visit">Visit</option><option value="Kg">Kg</option></select></div>';

@@ -123,7 +123,7 @@ body {
   width: 35rem;
   border: 1px solid rgba(128, 128, 128, 0.2);
   border: none;
-  resize: vertical;
+  resize: none;
   overflow: auto;
   background: transparent;
 }
@@ -264,6 +264,11 @@ body {
 .main .table .styled-table .sn .remove-row-btn:hover {
   background-color: #e60000;
 }
+.main .table .styled-table .desc {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
 .main .table .styled-table th, .main .table .styled-table td {
   padding: 0.1rem 0.1rem;
   text-align: center;
@@ -305,6 +310,7 @@ body {
   line-height: 1rem;
   padding: 0.2rem;
   border: none;
+  resize: none;
   text-align: left;
   border-radius: 0.2rem;
   font-size: 0.8rem;
@@ -508,6 +514,7 @@ body {
   border: none;
   resize: vertical;
   border: none;
+  resize: none;
   height: 9rem;
   padding: 0.2rem;
   width: 100%;
