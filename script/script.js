@@ -136,7 +136,7 @@ function save(){
   let table_data = {};
 
   //Existing Data
-  const quotation_no = document.getElementsByName('quotation-no')[0].value;
+  const quotation_no = document.getElementsByName('quotation-no')[0].value.toUpperCase();
   const quotation_date = document.getElementsByName('quotation-date')[0].value;
   const customer_name = document.getElementsByName('customer-name')[0].value;
   const customer_details = document.getElementsByName('customer-details')[0].value;
@@ -184,7 +184,7 @@ function save(){
 document.getElementById('quotation-no').addEventListener('input', function() {
   const quotation_no = document.getElementsByName('quotation-no')[0].value;
 
-  if (Object.keys(quotation_data).includes(quotation_no)) {
+  if (Object.keys(quotation_data).includes(quotation_no.toUpperCase())) {
     // console.log(quotation_data[quotation_no]);
     document.getElementsByName('quotation-date')[0].value = quotation_data[quotation_no]['quotation_date'];
     document.getElementsByName('customer-name')[0].value = quotation_data[quotation_no]['customer_name'];

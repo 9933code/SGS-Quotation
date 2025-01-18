@@ -28,16 +28,28 @@ body {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  position: relative;
+}
+.main .main-heading .head {
+  flex: 1;
+  text-align: center;
 }
 .main .main-heading p {
+  position: absolute;
+  right: 0;
+  bottom: 0;
   font-size: smaller;
+  font-weight: bold;
+  text-align: center;
+  color: rgba(128, 128, 128, 0.5);
+  letter-spacing: 0.1rem;
 }
 .main .main-detail {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  margin: 0.5rem 0rem;
+  margin: 0.2rem 0rem;
 }
 .main .main-detail .company-info {
   display: flex;
@@ -76,6 +88,7 @@ body {
   flex-direction: row;
   align-items: flex-start;
   justify-content: space-between;
+  padding: 0.2rem 0rem;
 }
 .main .buyer .buyer-details {
   display: flex;
@@ -92,6 +105,7 @@ body {
   font-weight: bold;
   border: none;
   background: transparent;
+  margin-bottom: 0.1rem;
 }
 .main .buyer .buyer-details input:-moz-placeholder-shown {
   border-color: #3498db;
@@ -105,7 +119,7 @@ body {
 }
 .main .buyer .buyer-details textarea {
   font-size: small;
-  height: 7rem;
+  height: 6rem;
   width: 35rem;
   border: 1px solid rgba(128, 128, 128, 0.2);
   border: none;
@@ -149,6 +163,7 @@ body {
   width: 10rem;
   border: none;
   font-weight: bold;
+  text-transform: uppercase;
 }
 .main .buyer .invoice-info .quotation .quotation-no input:-moz-placeholder-shown, .main .buyer .invoice-info .quotation .quotation-date input:-moz-placeholder-shown {
   border-color: #3498db;
@@ -251,7 +266,7 @@ body {
 }
 .main .table .styled-table th, .main .table .styled-table td {
   padding: 0.1rem 0.1rem;
-  text-align: left;
+  text-align: center;
 }
 .main .table .styled-table th .remove-btn, .main .table .styled-table td .remove-btn {
   display: flex;
@@ -260,7 +275,13 @@ body {
   justify-content: center;
 }
 .main .table .styled-table th .input-no input, .main .table .styled-table td .input-no input {
-  text-align: right;
+  text-align: center;
+}
+.main .table .styled-table th select, .main .table .styled-table td select {
+  text-align: center;
+}
+.main .table .styled-table th input, .main .table .styled-table td input {
+  text-align: center;
 }
 .main .table .styled-table thead {
   background-color: #009879;
@@ -415,7 +436,7 @@ body {
 }
 .main .table .summary .right .gst input {
   border: none;
-  padding: 0.1rem 0rem;
+  padding: 0.1rem 0.3rem;
 }
 .main .table .summary .right .gst input:nth-of-type(1) {
   text-align: center;
