@@ -146,6 +146,7 @@ function save(){
   const gst_perc = document.getElementsByName('gst-perc')[0].value;
   const gst = document.getElementsByName('gst')[0].value;
   const total = document.getElementsByName('total')[0].value;
+  const terms_conditions = document.getElementsByName('terms-conditions')[0].value;
 
   const tableBody = document.getElementById('goodsTable').getElementsByTagName('tbody')[0];
   const rows = tableBody.rows;
@@ -173,6 +174,7 @@ function save(){
       gst_perc:gst_perc,
       gst:gst,
       total:total,
+      terms_conditions:terms_conditions,
       items:table_data
     },
   };
@@ -195,7 +197,19 @@ document.getElementById('quotation-no').addEventListener('input', function() {
     document.getElementsByName('gst-perc')[0].value = quotation_data[quotation_no]['gst_perc'];
     document.getElementsByName('gst')[0].value = quotation_data[quotation_no]['gst'];
     document.getElementsByName('total')[0].value = quotation_data[quotation_no]['total'];
+    document.getElementsByName('terms-conditions')[0].value = quotation_data[quotation_no]['terms_conditions'];
+    
     addData(quotation_data[quotation_no]['items']);
+
+    // Function to adjust height dynamically
+    const adjustHeight = (elementTag) => {
+      elementTag.style.height = '1.5rem'; // Reset to recalculate
+      const newHeight = elementTag.scrollHeight; // Calculate the required height
+      elementTag.style.height = `${newHeight}px`; // Apply the new height
+    };
+
+    adjustHeight(document.getElementsByName('customer-details')[0]);
+    adjustHeight(document.getElementsByName('terms-conditions')[0]);
   }
 });
 
@@ -247,14 +261,16 @@ function addData(items) {
     const textArea = newRow.querySelector('textarea');
   
     // Function to adjust height dynamically
-    const adjustHeight = () => {
-        textArea.style.height = '1.5rem'; // Reset to recalculate
-        const newHeight = textArea.scrollHeight; // Calculate the required height
-        textArea.style.height = `${newHeight}px`; // Apply the new height
+    const adjustHeight = (elementTag) => {
+      elementTag.style.height = '1.5rem'; // Reset to recalculate
+      const newHeight = elementTag.scrollHeight; // Calculate the required height
+      elementTag.style.height = `${newHeight}px`; // Apply the new height
     };
   
     // Listen to input events
-    textArea.addEventListener('input', adjustHeight);
+    textArea.addEventListener('input', ()=> adjustHeight(textArea));
+
+    adjustHeight(textArea);
   
     // Adding event listener for calculating amount
     const inputNo       = newRow.querySelectorAll('input[type="number"]');
@@ -304,3 +320,20 @@ function addData(items) {
   });
 
 }
+
+
+// Adjust height based on content Terms & Conditions
+const textAreaTC = document.getElementById('terms-conditions');
+const customerDetails = document.getElementById('customer-details');
+
+// Function to adjust height dynamically
+const adjustHeightTC = (elementTag) => {
+  console.log(elementTag.value);
+  elementTag.style.height = '1.5rem'; // Reset to recalculate
+    const newHeight = elementTag.scrollHeight; // Calculate the required height
+    elementTag.style.height = `${newHeight}px`; // Apply the new height
+};
+
+// Listen to input events
+textAreaTC.addEventListener('input', ()=>adjustHeightTC(textAreaTC));
+customerDetails.addEventListener('input', ()=>adjustHeightTC(customerDetails));

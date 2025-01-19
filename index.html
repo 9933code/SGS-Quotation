@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SGS-Invoice</title>
+    <title>SGS-Quotation</title>
     <link rel="stylesheet" href="style/style.css">
     <link rel="stylesheet" href="style/style_print.css">
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico">
 </head>
 <body>
     <div class="main">
@@ -32,7 +33,7 @@
             <div class="buyer-details">
                 <h3>Buyer Details</h3>
                 <input type="text" placeholder="Customer name" name="customer-name">
-                <textarea id="w3review" rows="3" placeholder="Add Customer Details..." name="customer-details"></textarea>
+                <textarea id="customer-details" rows="3" placeholder="Add Customer Details..." name="customer-details"></textarea>
             </div>
             <div class="invoice-info">
                 <div class="quotation">
@@ -66,12 +67,13 @@
               <thead>
                 <tr>
                   <th style="width: 02rem;">SN</th>
-                  <th style="width: 28rem">Description of Goods</th>
+                  <!-- <th style="width: 28rem">Description of Goods</th> -->
+                  <th style="width: auto">Description of Goods</th>
                   <th style="width: 06rem;">Make</th>
                   <th style="width: 06rem;">Quantity</th>
-                  <th style="width: 06rem;">Unit</th>
+                  <th style="width: 04rem;">Unit</th>
                   <th style="width: 06rem;">Rate</th>
-                  <th style="width: auto;">Amount</th>
+                  <th style="width: 06rem;">Amount</th>
                 </tr>
               </thead>
               <tbody>
@@ -120,7 +122,7 @@
             </div>
             <div class="terms-conditions">
                 <h3>Terms & Conditions</h3>
-                <textarea name="" id="" cols="30" rows="5" placeholder="Add terms & Conditions...">
+                <textarea name="terms-conditions" id="terms-conditions" cols="30" rows="5" placeholder="Add terms & Conditions...">
 1.Payment 50% Advance With The Confirmation of Order.
 2.Payment 30% before dispatch the Material 
 3.Payment 20% after completion the work.</textarea>

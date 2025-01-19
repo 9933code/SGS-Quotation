@@ -157,9 +157,12 @@ body {
   justify-content: center;
 }
 .main .buyer .invoice-info .quotation .quotation-no label, .main .buyer .invoice-info .quotation .quotation-date label {
+  height: 1.2rem;
   width: 7rem;
 }
 .main .buyer .invoice-info .quotation .quotation-no input, .main .buyer .invoice-info .quotation .quotation-date input {
+  padding-left: 0.2rem;
+  height: 1.2rem;
   width: 10rem;
   border: none;
   font-weight: bold;
@@ -176,6 +179,7 @@ body {
   font-weight: bold;
 }
 .main .buyer .invoice-info .quotation .quotation-no input[type=date], .main .buyer .invoice-info .quotation .quotation-date input[type=date] {
+  padding-left: 0rem;
   -moz-appearance: none;
        appearance: none;
   -webkit-appearance: none;
@@ -208,9 +212,11 @@ body {
   justify-content: center;
 }
 .main .buyer .invoice-info .contact-person .person label, .main .buyer .invoice-info .contact-person .contact label {
+  height: 1.2rem;
   width: 4rem;
 }
 .main .buyer .invoice-info .contact-person .person input, .main .buyer .invoice-info .contact-person .contact input {
+  height: 1.2rem;
   width: 13rem;
   border: none;
   font-weight: bold;
@@ -283,6 +289,11 @@ body {
   text-align: center;
 }
 .main .table .styled-table th select, .main .table .styled-table td select {
+  -moz-text-align-last: center;
+       text-align-last: center;
+  text-align: center;
+}
+.main .table .styled-table th select option, .main .table .styled-table td select option {
   text-align: center;
 }
 .main .table .styled-table th input, .main .table .styled-table td input {
