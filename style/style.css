@@ -345,6 +345,7 @@ body {
   border: none;
   border-radius: 0.2rem;
   background-color: transparent;
+  color:black;
 }
 .main .table .styled-table select:focus {
   border-color: #009879;
@@ -353,7 +354,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: centcolorr;
   position: relative;
   right: -50%;
 }
