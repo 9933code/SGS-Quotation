@@ -292,6 +292,7 @@ body {
   -moz-text-align-last: center;
        text-align-last: center;
   text-align: center;
+  color: black;
 }
 .main .table .styled-table th select option, .main .table .styled-table td select option {
   text-align: center;
@@ -321,11 +322,11 @@ body {
   line-height: 1rem;
   padding: 0.2rem;
   border: none;
-  resize: none;
   text-align: left;
   border-radius: 0.2rem;
   font-size: 0.8rem;
   background: transparent;
+  resize: none;
 }
 .main .table .styled-table input:focus, .main .table .styled-table textarea:focus {
   border-color: #009879;
@@ -338,6 +339,9 @@ body {
   border-color: #3498db;
   background-color: #f0f9ff;
 }
+.main .table .styled-table input::-webkit-scrollbar, .main .table .styled-table textarea::-webkit-scrollbar {
+  display: none;
+}
 .main .table .styled-table select {
   width: 100%;
   padding: 0.1rem;
@@ -345,7 +349,6 @@ body {
   border: none;
   border-radius: 0.2rem;
   background-color: transparent;
-  color:black;
 }
 .main .table .styled-table select:focus {
   border-color: #009879;
@@ -354,7 +357,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  justify-content: centcolorr;
+  justify-content: center;
   position: relative;
   right: -50%;
 }
@@ -379,10 +382,48 @@ body {
 .main .table .summary {
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   align-items: flex-end;
-  justify-content: center;
+  justify-content: space-between;
   font-size: 0.8rem;
+}
+.main .table .summary .left .bank-details {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+  margin: 0.2rem;
+  width: 17rem;
+}
+.main .table .summary .left .bank-details .details {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .table .summary .left .bank-details .details span {
+  width: 10rem;
+}
+.main .table .summary .left .bank-details .details p {
+  width: 15rem;
+  font-family: "Open Sans", serif;
+}
+.main .table .summary .left .bank-details .details-payment {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.main .table .summary .left .bank-details .details-payment img {
+  height: 15rem;
+}
+.main .table .summary .left .bank-details .details-payment .info {
+  width: 100%;
+}
+.main .table .summary .left .bank-details .details-payment .info p {
+  text-align: center;
+  width: 100%;
+  font-size: 0.7rem;
 }
 .main .table .summary .right {
   /* For Chrome, Safari, Edge, and Opera */
@@ -454,11 +495,11 @@ body {
 }
 .main .table .summary .right .gst input {
   border: none;
-  padding: 0.1rem 0.3rem;
+  padding: 0.1rem 0rem;
 }
 .main .table .summary .right .gst input:nth-of-type(1) {
-  text-align: center;
-  width: 2rem;
+  text-align: right;
+  width: 1rem;
 }
 .main .table .summary .right .gst input:nth-of-type(1)::after {
   content: "%";
@@ -468,7 +509,7 @@ body {
 }
 .main .table .summary .right .gst input:nth-of-type(2) {
   text-align: right;
-  width: 6rem;
+  width: 7rem;
 }
 .main .footer {
   display: flex;
@@ -476,43 +517,6 @@ body {
   align-items: baseline;
   justify-content: space-between;
   font-size: small;
-}
-.main .footer .bank-details {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  justify-content: space-between;
-  width: 17rem;
-}
-.main .footer .bank-details .details {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-between;
-}
-.main .footer .bank-details .details span {
-  width: 6rem;
-}
-.main .footer .bank-details .details p {
-  width: 10rem;
-  font-family: "Open Sans", serif;
-}
-.main .footer .bank-details .details-payment {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
-}
-.main .footer .bank-details .details-payment img {
-  height: 15rem;
-}
-.main .footer .bank-details .details-payment .info {
-  width: 100%;
-}
-.main .footer .bank-details .details-payment .info p {
-  text-align: center;
-  width: 100%;
-  font-size: 0.7rem;
 }
 .main .footer .terms-conditions {
   flex: 1;
@@ -540,6 +544,9 @@ body {
   border-color: #3498db;
   background-color: #f0f9ff;
   font-weight: bold;
+}
+.main .footer .terms-conditions textarea::-webkit-scrollbar {
+  display: none;
 }
 .main .footer .stamp-with-sign {
   display: flex;

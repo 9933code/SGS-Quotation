@@ -277,6 +277,7 @@ body{
                 select{
                     text-align-last: center;
                     text-align: center;
+                    color: black;
                     option{
                         text-align: center;
                     }
@@ -314,11 +315,12 @@ body{
                 line-height: 1rem;
                 padding: 0.2rem;
                 border: none; // border: 1px solid $input-border;
-                resize: none;
                 text-align: left;
                 border-radius: 0.2rem;
                 font-size: 0.8rem;
                 background: transparent;
+                resize: none;
+
                 &:focus {
                     border-color: $input-focus-border;
                 }
@@ -326,6 +328,11 @@ body{
                 &:placeholder-shown {
                     border-color: #3498db;
                     background-color: #f0f9ff;
+                }
+
+                &::-webkit-scrollbar{
+                    display: none;
+                    // terms-conditions
                 }
             }
 
@@ -371,9 +378,43 @@ body{
 
         .summary{
             width: 100%;
-            @include flex-parent(flex, column, flex-end, center);
+            @include flex-parent(flex, row, flex-end, space-between);
             font-size: 0.8rem;
-
+            .left{
+                .bank-details{
+                    @include flex-parent(flex, column, flex-start, space-between);
+                    margin: 0.2rem;
+                    width: 17rem;
+                    .details{
+                        @include flex-parent(flex, row, center, space-between);
+                        span{
+                            width: 10rem;
+                        }
+                        p{
+                            width: 15rem;
+                            font-family: "Open Sans", serif;
+                        }
+                    }
+        
+                    .details-payment{
+                        @include flex-parent(flex, column, center, space-between);
+                        
+                        img{
+                            height: 15rem;
+                        }
+                        .info{
+                            width: 100%;
+                            p{  
+                                text-align: center;
+                                width: 100%;
+                                font-size: 0.7rem;
+                            }
+                        }
+        
+                    }
+        
+                }
+            }
             .right{
                 /* For Chrome, Safari, Edge, and Opera */
                 input[type="number"]::-webkit-inner-spin-button,
@@ -443,10 +484,10 @@ body{
 
                     input{
                         border: none;
-                        padding: 0.1rem 0.3rem;
+                        padding: 0.1rem 0rem;
                         &:nth-of-type(1) {
-                            text-align: center;
-                            width: 2rem;
+                            text-align: right;
+                            width: 1rem;
 
                             &::after{
                                 content: "%";
@@ -457,7 +498,7 @@ body{
                         }
                         &:nth-of-type(2) {
                             text-align:right;
-                            width: 6rem;
+                            width: 7rem;
                         }
                     }
                     
@@ -472,38 +513,7 @@ body{
         @include flex-parent(flex, row, baseline, space-between);
         font-size: small;
 
-        .bank-details{
-            @include flex-parent(flex, column, flex-start, space-between);
-            width: 17rem;
-            .details{
-                @include flex-parent(flex, row, center, space-between);
-                span{
-                    width: 6rem;
-                }
-                p{
-                    width: 10rem;
-                    font-family: "Open Sans", serif;
-                }
-            }
 
-            .details-payment{
-                @include flex-parent(flex, column, center, space-between);
-                
-                img{
-                    height: 15rem;
-                }
-                .info{
-                    width: 100%;
-                    p{  
-                        text-align: center;
-                        width: 100%;
-                        font-size: 0.7rem;
-                    }
-                }
-
-            }
-
-        }
 
         .terms-conditions{
             flex:1;
@@ -523,6 +533,10 @@ body{
                     border-color: #3498db;
                     background-color: #f0f9ff;
                     font-weight: bold;
+                }
+
+                &::-webkit-scrollbar{
+                    display: none;
                 }
             }
         }
