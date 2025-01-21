@@ -117,25 +117,18 @@ body {
   background-color: #f0f9ff;
   font-weight: bold;
 }
-.main .buyer .buyer-details textarea {
+.main .buyer .buyer-details #customer-details {
   font-size: small;
-  height: 6rem;
   width: 35rem;
-  border: 1px solid rgba(128, 128, 128, 0.2);
-  border: none;
-  resize: none;
   overflow: auto;
   background: transparent;
 }
-.main .buyer .buyer-details textarea:-moz-placeholder-shown {
-  border-color: #3498db;
-  background-color: #f0f9ff;
-  font-weight: bold;
-}
-.main .buyer .buyer-details textarea:placeholder-shown {
-  border-color: #3498db;
-  background-color: #f0f9ff;
-  font-weight: bold;
+.main .buyer .buyer-details #customer-details:empty:before {
+  display: inline-block;
+  content: attr(placeholder);
+  width: 34.9rem;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  opacity: 0.6;
 }
 .main .buyer .invoice-info {
   display: flex;
@@ -159,6 +152,7 @@ body {
 .main .buyer .invoice-info .quotation .quotation-no label, .main .buyer .invoice-info .quotation .quotation-date label {
   height: 1.2rem;
   width: 7rem;
+  text-align: left;
 }
 .main .buyer .invoice-info .quotation .quotation-no input, .main .buyer .invoice-info .quotation .quotation-date input {
   padding-left: 0.2rem;
@@ -271,9 +265,17 @@ body {
   background-color: #e60000;
 }
 .main .table .styled-table .desc {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  font-size: small;
+  text-align: left;
+}
+.main .table .styled-table .desc:empty:before {
+  display: inline-block;
+  content: attr(placeholder);
+  width: 98.5%;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  background-color: #fff;
+  opacity: 0.6;
 }
 .main .table .styled-table th, .main .table .styled-table td {
   padding: 0.1rem 0.1rem;
@@ -392,7 +394,7 @@ body {
   flex-direction: column;
   align-items: flex-start;
   justify-content: space-between;
-  margin: 0.2rem;
+  margin: 1.5rem 0.2rem 0.2rem 0.2rem;
   width: 17rem;
 }
 .main .table .summary .left .bank-details .details {
@@ -525,28 +527,19 @@ body {
   align-items: flex-start;
   justify-content: space-between;
 }
-.main .footer .terms-conditions textarea {
+.main .footer .terms-conditions #terms-condition {
   font-size: small;
-  border: none;
-  resize: vertical;
-  border: none;
-  resize: none;
-  height: 9rem;
-  padding: 0.2rem;
   width: 100%;
+  border: none;
+  overflow: auto;
+  background: transparent;
 }
-.main .footer .terms-conditions textarea:-moz-placeholder-shown {
-  border-color: #3498db;
-  background-color: #f0f9ff;
-  font-weight: bold;
-}
-.main .footer .terms-conditions textarea:placeholder-shown {
-  border-color: #3498db;
-  background-color: #f0f9ff;
-  font-weight: bold;
-}
-.main .footer .terms-conditions textarea::-webkit-scrollbar {
-  display: none;
+.main .footer .terms-conditions #terms-condition:empty:before {
+  display: inline-block;
+  content: attr(placeholder);
+  width: 98.5%;
+  border: 1px solid rgba(128, 128, 128, 0.2);
+  opacity: 0.6;
 }
 .main .footer .stamp-with-sign {
   display: flex;

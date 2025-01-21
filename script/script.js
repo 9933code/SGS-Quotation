@@ -29,7 +29,8 @@ document.getElementById('addRowBtn').addEventListener('click', function() {
   // Setting up inputs for each cell
   // srNoCell.textContent    = tableBody.rows.length;
   srNoCell.innerHTML      = '<div class="sn"><div class="remove-btn"><button class="remove-row-btn">-</button></div>' + tableBody.rows.length + '</div>';
-  descCell.innerHTML      = '<div class="desc"><textarea type="text"   placeholder="Enter Description"></textarea></div>';
+  descCell.innerHTML      = '<div class="desc" contenteditable="True" placeholder="Enter Description"></div>';
+  // descCell.innerHTML      = '<div class="desc"><textarea type="text"   placeholder="Enter Description"></textarea></div>';
   makeCell.innerHTML      = '<input type="text"   placeholder="Enter Make">';
   quantityCell.innerHTML  = '<div class="input-no non-printable-format"><input type="number" placeholder="Enter Qty"></div>';
   unitsCell.innerHTML     = '<div  class="non-printable-format"><select><option value="Pcs">Pcs</option><option value="Set">Set</option><option value="Meter">Meter</option><option value="Ltr">Ltr</option><option value="Unit">Unit</option><option value="Visit">Visit</option><option value="Kg">Kg</option></select></div>';
@@ -43,19 +44,19 @@ document.getElementById('addRowBtn').addEventListener('click', function() {
     updateRowNumbers();
   });
 
-  // Adjust height of text area
-  // Adjust height based on content
-  const textArea = newRow.querySelector('textarea');
+  // // Adjust height of text area
+  // // Adjust height based on content
+  // const textArea = newRow.querySelector('textarea');
 
-  // Function to adjust height dynamically
-  const adjustHeight = () => {
-      textArea.style.height = '1.5rem'; // Reset to recalculate
-      const newHeight = textArea.scrollHeight; // Calculate the required height
-      textArea.style.height = `${newHeight}px`; // Apply the new height
-  };
+  // // Function to adjust height dynamically
+  // const adjustHeight = () => {
+  //     textArea.style.height = '1.5rem'; // Reset to recalculate
+  //     const newHeight = textArea.scrollHeight; // Calculate the required height
+  //     textArea.style.height = `${newHeight}px`; // Apply the new height
+  // };
 
-  // Listen to input events
-  textArea.addEventListener('input', adjustHeight);
+  // // Listen to input events
+  // textArea.addEventListener('input', adjustHeight);
 
   // Adding event listener for calculating amount
   const inputNo       = newRow.querySelectorAll('input[type="number"]');
@@ -139,21 +140,22 @@ function save(){
   const quotation_no = document.getElementsByName('quotation-no')[0].value.toUpperCase();
   const quotation_date = document.getElementsByName('quotation-date')[0].value;
   const customer_name = document.getElementsByName('customer-name')[0].value;
-  const customer_details = document.getElementsByName('customer-details')[0].value;
+  const customer_details = document.getElementsByName('customer-details')[0].innerHTML;
   const contact_person_name = document.getElementsByName('person-name')[0].value;
   const contact_person_no = document.getElementsByName('contact-no')[0].value;
   const sub_total = document.getElementsByName('sub-total')[0].value;
   const gst_perc = document.getElementsByName('gst-perc')[0].value;
   const gst = document.getElementsByName('gst')[0].value;
   const total = document.getElementsByName('total')[0].value;
-  const terms_conditions = document.getElementsByName('terms-conditions')[0].value;
+  const terms_conditions = document.getElementsByName('terms-condition')[0].innerHTML;
 
   const tableBody = document.getElementById('goodsTable').getElementsByTagName('tbody')[0];
   const rows = tableBody.rows;
 
   for (let i = 0; i < rows.length; i++) {
     table_data = {...table_data, [i+1] :  {
-      desc : rows[i].cells[1].getElementsByTagName('textarea')[0].value,
+      // desc : rows[i].cells[1].getElementsByTagName('textarea')[0].value,
+      desc : rows[i].cells[1].getElementsByClassName('desc')[0].innerHTML,
       maker : rows[i].cells[2].getElementsByTagName('input')[0].value,
       qty : rows[i].cells[3].getElementsByTagName('input')[0].value,
       unit : rows[i].cells[4].getElementsByTagName('select')[0].value,
@@ -190,26 +192,17 @@ document.getElementById('quotation-no').addEventListener('input', function() {
     // console.log(quotation_data[quotation_no]);
     document.getElementsByName('quotation-date')[0].value = quotation_data[quotation_no]['quotation_date'];
     document.getElementsByName('customer-name')[0].value = quotation_data[quotation_no]['customer_name'];
-    document.getElementsByName('customer-details')[0].value = quotation_data[quotation_no]['customer_details'];
+    document.getElementsByName('customer-details')[0].innerHTML = quotation_data[quotation_no]['customer_details'];
     document.getElementsByName('person-name')[0].value = quotation_data[quotation_no]['contact_person_name'];
     document.getElementsByName('contact-no')[0].value = quotation_data[quotation_no]['contact_person_no'];
     document.getElementsByName('sub-total')[0].value = quotation_data[quotation_no]['sub_total'];
     document.getElementsByName('gst-perc')[0].value = quotation_data[quotation_no]['gst_perc'];
     document.getElementsByName('gst')[0].value = quotation_data[quotation_no]['gst'];
     document.getElementsByName('total')[0].value = quotation_data[quotation_no]['total'];
-    document.getElementsByName('terms-conditions')[0].value = quotation_data[quotation_no]['terms_conditions'];
+    document.getElementsByName('terms-condition')[0].innerHTML = quotation_data[quotation_no]['terms_conditions'];
     
     addData(quotation_data[quotation_no]['items']);
 
-    // Function to adjust height dynamically
-    const adjustHeight = (elementTag) => {
-      elementTag.style.height = '1.5rem'; // Reset to recalculate
-      const newHeight = elementTag.scrollHeight; // Calculate the required height
-      elementTag.style.height = `${newHeight}px`; // Apply the new height
-    };
-
-    adjustHeight(document.getElementsByName('customer-details')[0]);
-    adjustHeight(document.getElementsByName('terms-conditions')[0]);
   }
 });
 
@@ -235,14 +228,17 @@ function addData(items) {
     // Setting up inputs for each cell
     // srNoCell.textContent    = tableBody.rows.length;
     srNoCell.innerHTML      = '<div class="sn"><div class="remove-btn"><button class="remove-row-btn">-</button></div>' + tableBody.rows.length + '</div>';
-    descCell.innerHTML      = '<div class="desc"><textarea type="text"   placeholder="Enter Description"></textarea></div>';
+    // descCell.innerHTML      = '<div class="desc"><textarea type="text"   placeholder="Enter Description"></textarea></div>';
+    descCell.innerHTML      = '<div class="desc" contenteditable="True" placeholder="Enter Description"></div>';
     makeCell.innerHTML      = '<input type="text"   placeholder="Enter Make">';
     quantityCell.innerHTML  = '<div class="input-no non-printable-format"><input type="number" placeholder="Enter Qty"></div>';
     unitsCell.innerHTML     = '<div  class="non-printable-format"><select><option value="Pcs">Pcs</option><option value="Set">Set</option><option value="Meter">Meter</option><option value="Ltr">Ltr</option><option value="Unit">Unit</option><option value="Visit">Visit</option><option value="Kg">Kg</option></select></div>';
     rateCell.innerHTML      = '<div class="input-no non-printable-format"><input type="number" placeholder="Enter Rate" step="0.1"></div>';
     amountCell.innerHTML    = '<div class="input-no non-printable-format"><input type="number" placeholder="Amount" step="0.1" id="amount'+tableBody.rows.length+'" readonly></div>';
     
-    descCell.getElementsByTagName('textarea')[0].value = items[item].desc;
+    // desc : rows[i].cells[1].getElementsByName('desc')[0].innerHTML,
+    // descCell.getElementsByTagName('textarea')[0].value = items[item].desc;
+    descCell.getElementsByClassName('desc')[0].innerHTML = items[item].desc;
     makeCell.getElementsByTagName('input')[0].value = items[item].maker;
     quantityCell.getElementsByTagName('input')[0].value = items[item].qty;
     unitsCell.getElementsByTagName('select')[0].value = items[item].unit;
@@ -256,21 +252,21 @@ function addData(items) {
       updateRowNumbers();
     });
   
-    // Adjust height of text area
-    // Adjust height based on content
-    const textArea = newRow.querySelector('textarea');
+    // // Adjust height of text area
+    // // Adjust height based on content
+    // const textArea = newRow.querySelector('textarea');
   
-    // Function to adjust height dynamically
-    const adjustHeight = (elementTag) => {
-      elementTag.style.height = '1.5rem'; // Reset to recalculate
-      const newHeight = elementTag.scrollHeight; // Calculate the required height
-      elementTag.style.height = `${newHeight}px`; // Apply the new height
-    };
+    // // Function to adjust height dynamically
+    // const adjustHeight = (elementTag) => {
+    //   elementTag.style.height = '1.5rem'; // Reset to recalculate
+    //   const newHeight = elementTag.scrollHeight; // Calculate the required height
+    //   elementTag.style.height = `${newHeight}px`; // Apply the new height
+    // };
   
-    // Listen to input events
-    textArea.addEventListener('input', ()=> adjustHeight(textArea));
+    // // Listen to input events
+    // textArea.addEventListener('input', ()=> adjustHeight(textArea));
 
-    adjustHeight(textArea);
+    // adjustHeight(textArea);
   
     // Adding event listener for calculating amount
     const inputNo       = newRow.querySelectorAll('input[type="number"]');
@@ -322,18 +318,18 @@ function addData(items) {
 }
 
 
-// Adjust height based on content Terms & Conditions
-const textAreaTC = document.getElementById('terms-conditions');
-const customerDetails = document.getElementById('customer-details');
+// // Adjust height based on content Terms & Conditions
+// const textAreaTC = document.getElementById('terms-conditions');
+// const customerDetails = document.getElementById('customer-details');
 
-// Function to adjust height dynamically
-const adjustHeightTC = (elementTag) => {
-  console.log(elementTag.value);
-  elementTag.style.height = '1.5rem'; // Reset to recalculate
-    const newHeight = elementTag.scrollHeight; // Calculate the required height
-    elementTag.style.height = `${newHeight}px`; // Apply the new height
-};
+// // Function to adjust height dynamically
+// const adjustHeightTC = (elementTag) => {
+//   console.log(elementTag.value);
+//   elementTag.style.height = '1.5rem'; // Reset to recalculate
+//     const newHeight = elementTag.scrollHeight; // Calculate the required height
+//     elementTag.style.height = `${newHeight}px`; // Apply the new height
+// };
 
-// Listen to input events
-textAreaTC.addEventListener('input', ()=>adjustHeightTC(textAreaTC));
-customerDetails.addEventListener('input', ()=>adjustHeightTC(customerDetails));
+// // Listen to input events
+// textAreaTC.addEventListener('input', ()=>adjustHeightTC(textAreaTC));
+// customerDetails.addEventListener('input', ()=>adjustHeightTC(customerDetails));
