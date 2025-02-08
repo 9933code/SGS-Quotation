@@ -1,11 +1,22 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 
-@mixin flex-parent($display, $flex-direction, $align-items, $justify-content){
-    @if $display         != null  { display       : $display;         }
-    @if $flex-direction  != null  { flex-direction: $flex-direction;  }
-    @if $align-items     != null  {align-items    : $align-items;     }
-    @if $justify-content != null  {justify-content: $justify-content; }
+@mixin flex-parent($display, $flex-direction, $align-items, $justify-content) {
+    @if $display !=null {
+        display: $display;
+    }
+
+    @if $flex-direction !=null {
+        flex-direction: $flex-direction;
+    }
+
+    @if $align-items !=null {
+        align-items: $align-items;
+    }
+
+    @if $justify-content !=null {
+        justify-content: $justify-content;
+    }
 }
 
 $primary-color: #009879;
@@ -19,40 +30,55 @@ $input-focus-border: #009879;
 $remove-btn-color: #ff4d4d;
 $remove-btn-hover: #e60000;
 
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Poppins", serif;
 }
 
-html{
+html {
     padding: 1rem;
-    margin : 1rem;
+    margin: 1rem;
 }
 
-body{
+body {
     margin: 0 auto;
     padding: 0.5rem;
     width: 60rem;
+
+    .links {
+        text-decoration: none;
+        padding: 5px 10px;
+        border-radius: 4px;
+        background: #009879;
+        color: white;
+
+        &:hover {
+            background: #007b63;
+        }
+    }
 }
 
-.main{
+.main {
     border-radius: 5px;
     border: 1px solid rgba(128, 128, 128, 0.2);
     padding: 1rem;
-    
-    .main-heading{
+
+    .main-heading {
         display: flex;
         flex-direction: row;
         align-items: center;
-        justify-content:space-around;
-        position: relative;;
-        .head{
+        justify-content: space-around;
+        position: relative;
+        ;
+
+        .head {
             flex: 1;
             text-align: center;
         }
-        p{
+
+        p {
             position: absolute;
             right: 0;
             bottom: 0;
@@ -63,34 +89,36 @@ body{
             letter-spacing: 0.1rem;
         }
     }
-    
-    .main-detail{
+
+    .main-detail {
         @include flex-parent(flex, row, center, space-between);
         margin: 0.2rem 0rem;
-        
-        .company-info{
+
+        .company-info {
             @include flex-parent(flex, column, flex-start, space-between);
 
-            h3{
+            h3 {
                 position: relative;
-                span{
+
+                span {
                     position: absolute;
-                    right:-0.5rem;
-                    top:-0.5rem;
+                    right: -0.5rem;
+                    top: -0.5rem;
                 }
             }
-            p{
+
+            p {
                 font-size: small;
             }
         }
 
-        .logo{
+        .logo {
             height: 8rem;
             width: 12rem;
             overflow: hidden;
             @include flex-parent(flex, column, center, center);
 
-            img{
+            img {
                 height: 12rem;
                 width: 12rem;
                 object-fit: cover;
@@ -99,23 +127,25 @@ body{
 
     }
 
-    .buyer{
+    .buyer {
         @include flex-parent(flex, row, flex-start, space-between);
         padding: 0.2rem 0rem;
-        .buyer-details{
+
+        .buyer-details {
             @include flex-parent(flex, column, flex-start, stretch);
 
-            h3{
+            h3 {
                 position: relative;
             }
 
-            input{
+            input {
                 width: 35rem;
-                font-size:medium;
+                font-size: medium;
                 font-weight: bold;
                 border: none;
                 background: transparent;
                 margin-bottom: 0.1rem;
+
                 &:placeholder-shown {
                     border-color: #3498db;
                     background-color: #f0f9ff;
@@ -141,7 +171,7 @@ body{
             //     }
             // }
 
-            #customer-details{
+            #customer-details {
                 font-size: small;
                 width: 35rem;
                 // border: none;
@@ -159,38 +189,39 @@ body{
             }
         }
 
-        .invoice-info{
+        .invoice-info {
             @include flex-parent(flex, column, flex-start, center);
-            
-            .quotation{
+
+            .quotation {
                 @include flex-parent(flex, column, flex-start, center);
 
                 margin: 0.5rem;
 
-                .quotation-no, .quotation-date{
+                .quotation-no,
+                .quotation-date {
                     @include flex-parent(flex, row, flex-start, center);
-    
-                    label{
+
+                    label {
                         height: 1.2rem;
                         width: 7rem;
                         text-align: left;
                     }
-                    
-                    input{
+
+                    input {
                         padding-left: 0.2rem;
                         height: 1.2rem;
                         width: 10rem;
                         border: none;
                         font-weight: bold;
                         text-transform: uppercase;
-                        
+
                         &:placeholder-shown {
                             border-color: #3498db;
                             background-color: #f0f9ff;
                             font-weight: bold;
                         }
                     }
-                    
+
                     input[type="date"] {
                         padding-left: 0rem;
                         appearance: none;
@@ -206,29 +237,30 @@ body{
                 }
             }
 
-            .contact-person{
+            .contact-person {
                 @include flex-parent(flex, column, flex-start, center);
                 margin: 0.5rem;
 
-                p{
+                p {
                     text-decoration: underline;
                     // font-weight: bold;
                 }
 
-                .person, .contact{
+                .person,
+                .contact {
                     @include flex-parent(flex, row, flex-start, center);
-    
-                    label{
+
+                    label {
                         height: 1.2rem;
                         width: 4rem;
                     }
-    
-                    input{
+
+                    input {
                         height: 1.2rem;
                         width: 13rem;
                         border: none;
                         font-weight: bold;
-                        
+
                         &:placeholder-shown {
                             border-color: #3498db;
                             background-color: #f0f9ff;
@@ -248,21 +280,21 @@ body{
         background-color: #fff;
         border: 1px solid darken($primary-color, 10%);
         @include flex-parent(flex, column, center, space-between);
-      
+
         .styled-table {
             width: 100%;
             border-collapse: collapse;
 
-            .sn{
+            .sn {
                 @include flex-parent(flex, row, center, center);
                 position: relative;
                 font-size: 0.8rem;
 
-                .remove-row-btn{
+                .remove-row-btn {
                     position: absolute;
                     display: none;
-                    top:0%;
-                    left:-70%;
+                    top: 0%;
+                    left: -70%;
                     height: 1.2rem;
                     width: 1.2rem;
                     background-color: $remove-btn-color;
@@ -277,10 +309,11 @@ body{
                 }
             }
 
-            .desc{
+            .desc {
                 width: 100%;
                 font-size: small;
                 text-align: left;
+
                 &:empty:before {
                     display: inline-block;
                     content: attr(placeholder);
@@ -291,23 +324,29 @@ body{
                 }
             }
 
-            th, td {
+            th,
+            td {
                 padding: 0.1rem 0.1rem;
                 text-align: center;
-                .remove-btn{
+
+                .remove-btn {
                     @include flex-parent(flex, row, center, center);
                 }
-                .input-no input{
+
+                .input-no input {
                     text-align: center;
                 }
-                select{
+
+                select {
                     text-align-last: center;
                     text-align: center;
                     color: black;
-                    option{
+
+                    option {
                         text-align: center;
                     }
                 }
+
                 input {
                     text-align: center;
                 }
@@ -319,14 +358,20 @@ body{
                 color: $text-color;
             }
 
-            tbody{
-                tr{
-                    &:nth-child(even) { background-color: $row-even-bg; }
-                    &:nth-child(odd) { background-color: $row-odd-bg; }
-                    &:hover{ 
-                        background-color: $hover-color; 
+            tbody {
+                tr {
+                    &:nth-child(even) {
+                        background-color: $row-even-bg;
+                    }
 
-                        .remove-row-btn{
+                    &:nth-child(odd) {
+                        background-color: $row-odd-bg;
+                    }
+
+                    &:hover {
+                        background-color: $hover-color;
+
+                        .remove-row-btn {
                             display: block;
                         }
 
@@ -334,7 +379,8 @@ body{
                 }
             }
 
-            input, textarea {
+            input,
+            textarea {
                 width: 100%;
                 height: 1.5rem;
                 // height: auto;
@@ -350,13 +396,13 @@ body{
                 &:focus {
                     border-color: $input-focus-border;
                 }
-    
+
                 &:placeholder-shown {
                     border-color: #3498db;
                     background-color: #f0f9ff;
                 }
 
-                &::-webkit-scrollbar{
+                &::-webkit-scrollbar {
                     display: none;
                     // terms-conditions
                 }
@@ -369,20 +415,21 @@ body{
                 border: none;
                 border-radius: 0.2rem;
                 background-color: transparent;
-            
+
                 &:focus {
                     border-color: $input-focus-border;
                 }
             }
         }
-        
-        &:hover .new-btn{
+
+        &:hover .new-btn {
             @include flex-parent(flex, column, flex-end, center);
             position: relative;
             right: -50%;
+
             .add-row-btn {
                 margin: 0.2rem;
-                padding:0rem;
+                padding: 0rem;
                 background-color: $primary-color;
                 color: $text-color;
                 border: none;
@@ -391,79 +438,89 @@ body{
                 height: 2rem;
                 width: 2rem;
                 border-radius: 50%;
-            
+
                 &:hover {
                     background-color: darken($primary-color, 10%);
                 }
             }
         }
 
-        .new-btn{
+        .new-btn {
             display: none;
         }
 
-        .summary{
+        .summary {
             width: 100%;
             @include flex-parent(flex, row, flex-end, space-between);
             font-size: 0.8rem;
-            .left{
-                .bank-details{
+
+            .left {
+                .bank-details {
                     @include flex-parent(flex, column, flex-start, space-between);
                     margin: 1.5rem 0.2rem 0.2rem 0.2rem;
                     width: 17rem;
-                    .details{
+
+                    .details {
                         @include flex-parent(flex, row, center, space-between);
-                        span{
+
+                        span {
                             width: 10rem;
                         }
-                        p{
+
+                        p {
                             width: 15rem;
                             font-family: "Open Sans", serif;
                         }
                     }
-        
-                    .details-payment{
+
+                    .details-payment {
                         @include flex-parent(flex, column, center, space-between);
-                        
-                        img{
+
+                        img {
                             height: 15rem;
                         }
-                        .info{
+
+                        .info {
                             width: 100%;
-                            p{  
+
+                            p {
                                 text-align: center;
                                 width: 100%;
                                 font-size: 0.7rem;
                             }
                         }
-        
+
                     }
-        
+
                 }
             }
-            .right{
+
+            .right {
+
                 /* For Chrome, Safari, Edge, and Opera */
                 input[type="number"]::-webkit-inner-spin-button,
                 input[type="number"]::-webkit-outer-spin-button {
                     -webkit-appearance: none;
                     margin: 0;
                 }
-    
+
                 /* For Firefox */
                 input[type="number"] {
                     -moz-appearance: textfield;
                 }
-    
-                .sub-total{
+
+                .sub-total {
                     @include flex-parent(flex, row, flex-end, center);
                     border-bottom: 1px solid grey;
-                    label{
+
+                    label {
                         text-align: left;
                         width: 7rem;
                         font-weight: bold;
                         padding: 0.2rem;
                     }
-                    input{
+
+                    input {
                         text-align: right;
                         border: none;
                         width: 5rem;
@@ -472,17 +529,18 @@ body{
                     }
                 }
 
-                .total{
+                .total {
                     @include flex-parent(flex, row, flex-end, center);
                     // border-bottom: 1px solid grey;
 
-                    label{
+                    label {
                         text-align: left;
                         width: 7rem;
                         font-weight: bold;
                         padding: 0.2rem;
                     }
-                    input{
+
+                    input {
                         text-align: right;
                         border: none;
                         width: 5rem;
@@ -490,61 +548,64 @@ body{
                         font-weight: bold;
                     }
                 }
-    
-                .gst{
+
+                .gst {
                     @include flex-parent(flex, row, flex-end, center);
                     border-bottom: 1px solid grey;
 
-                    label{
+                    label {
                         text-align: left;
                         width: 3rem;
                         padding: 0.2rem;
 
                     }
 
-                    span{
+                    span {
                         text-align: center;
                         width: 1rem;
                         padding: 0.1rem 0rem;
                     }
 
-                    input{
+                    input {
                         border: none;
                         padding: 0.1rem 0rem;
+
                         &:nth-of-type(1) {
                             text-align: right;
                             width: 1rem;
 
-                            &::after{
+                            &::after {
                                 content: "%";
                                 color: blue;
                                 border: 2px solid red;
                                 margin-left: 0px;
                             }
                         }
+
                         &:nth-of-type(2) {
-                            text-align:right;
+                            text-align: right;
                             width: 7rem;
                         }
                     }
-                    
+
                 }
             }
 
         }
-      
+
     }
 
-    .footer{
+    .footer {
         @include flex-parent(flex, row, baseline, space-between);
         font-size: small;
 
 
 
-        .terms-conditions{
-            flex:1;
+        .terms-conditions {
+            flex: 1;
             @include flex-parent(flex, column, flex-start, space-between);
-            #terms-condition{
+
+            #terms-condition {
                 font-size: small;
                 width: 100%;
                 border: none;
@@ -560,6 +621,7 @@ body{
                     opacity: 0.6;
                 }
             }
+
             // textarea{
             //     font-size: small;
             //     border: none;
@@ -584,29 +646,29 @@ body{
 
         }
 
-        .stamp-with-sign{
+        .stamp-with-sign {
             @include flex-parent(flex, column, center, space-between);
             padding: 0.5rem;
             width: 14rem;
 
-            .stamp-sign{
+            .stamp-sign {
                 @include flex-parent(flex, column, center, center);
                 height: 5rem;
                 width: 6.5rem;
 
-                img{
+                img {
                     height: 5rem;
                     width: 6.5rem;
                 }
             }
         }
-    }    
+    }
 }
 
-.actions{
+.actions {
     @include flex-parent(flex, row, center, flex-end);
 
-    .print-button{
+    .print-button {
         margin: 0.5rem;
         padding: 0.5rem 1rem;
         border-radius: 0.2rem;
@@ -615,7 +677,7 @@ body{
         background-color: $primary-color;
         font-weight: bold;
 
-        &:hover{
+        &:hover {
             background-color: darken($primary-color, 10%);
         }
     }
