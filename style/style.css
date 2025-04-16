@@ -590,6 +590,8 @@ body .links:hover {
 .main .footer .stamp-with-sign .stamp-sign img {
   height: 5rem;
   width: 6.5rem;
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .actions {
