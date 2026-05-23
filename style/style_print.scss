@@ -7,7 +7,7 @@
 //         @if $align-items     != null  {align-items    : $align-items;     }
 //         @if $justify-content != null  {justify-content: $justify-content; }
 //     }
-    
+
 //     @page {
 //         // size: A4; /* Specify A4 size */
 //         size: auto; /* Specify A4 size */
@@ -32,7 +32,7 @@
 //     }
 
 //     .non-printable-format{
-        
+
 //         /* For Firefox */
 //         input[type="number"] {
 //             -moz-appearance: textfield !important; /* For Chrome, Safari, Edge, and Opera */
@@ -69,7 +69,7 @@
 //             width: 35rem !important;
 //         }
 //     }
-    
+
 //     .footer{
 //         .bank-details{
 //             .details{
@@ -126,22 +126,28 @@
 
 @media print {
     @page {
-        size: auto; /* Automatically adjust page size */
-        margin: 0; /* Remove default margins */
+        size: auto;
+        /* Automatically adjust page size */
+        margin: 0;
+        /* Remove default margins */
     }
 
-    html, body {
+    html,
+    body {
         width: 100%;
         height: 100%;
         margin: 0;
         padding: 0;
         overflow: visible;
-        -webkit-print-color-adjust: exact; /* For WebKit browsers */
-        print-color-adjust: exact; /* For modern browsers */
+        -webkit-print-color-adjust: exact;
+        /* For WebKit browsers */
+        print-color-adjust: exact;
+        /* For modern browsers */
     }
 
     .non-printable {
-        display: none !important; /* Hide non-printable elements */
+        display: none !important;
+        /* Hide non-printable elements */
     }
 
     /* Avoid page breaks within elements */
@@ -149,11 +155,13 @@
         page-break-inside: avoid !important;
     }
 
-    .non-printable-format{
-        
+    .non-printable-format {
+
         /* For Firefox */
         input[type="number"] {
-            -moz-appearance: textfield !important; /* For Chrome, Safari, Edge, and Opera */
+            -moz-appearance: textfield !important;
+
+            /* For Chrome, Safari, Edge, and Opera */
             &::-webkit-inner-spin-button,
             &::-webkit-outer-spin-button {
                 -webkit-appearance: none !important;
@@ -165,13 +173,17 @@
             display: none !important;
             appearance: none !important;
             -webkit-appearance: none !important;
-            -moz-appearance: none !important;       /* For Firefox */
+            -moz-appearance: none !important;
+            /* For Firefox */
         }
 
         select {
-            appearance: none !important;            /* Remove dropdown icon */
-            -webkit-appearance: none !important;    /* For WebKit browsers */
-            -moz-appearance: none !important;       /* For Firefox */
+            appearance: none !important;
+            /* Remove dropdown icon */
+            -webkit-appearance: none !important;
+            /* For WebKit browsers */
+            -moz-appearance: none !important;
+            /* For Firefox */
         }
     }
 
@@ -183,9 +195,10 @@
         justify-content: space-between;
     }
 
-    .buyer-details input, 
+    .buyer-details input,
     .buyer-details textarea {
-        width: 35rem !important; /* Keep column width consistent */
+        width: 35rem !important;
+        /* Keep column width consistent */
     }
 
     .footer .bank-details img {

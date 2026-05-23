@@ -1,19 +1,25 @@
 @media print {
   @page {
-    size: auto; /* Automatically adjust page size */
-    margin: 0; /* Remove default margins */
+    size: auto;
+    /* Automatically adjust page size */
+    margin: 0;
+    /* Remove default margins */
   }
-  html, body {
+  html,
+  body {
     width: 100%;
     height: 100%;
     margin: 0;
     padding: 0;
     overflow: visible;
-    -webkit-print-color-adjust: exact; /* For WebKit browsers */
-    print-color-adjust: exact; /* For modern browsers */
+    -webkit-print-color-adjust: exact;
+    /* For WebKit browsers */
+    print-color-adjust: exact;
+    /* For modern browsers */
   }
   .non-printable {
-    display: none !important; /* Hide non-printable elements */
+    display: none !important;
+    /* Hide non-printable elements */
   }
   /* Avoid page breaks within elements */
   * {
@@ -23,7 +29,8 @@
     /* For Firefox */
   }
   .non-printable-format input[type=number] {
-    -moz-appearance: textfield !important; /* For Chrome, Safari, Edge, and Opera */
+    -moz-appearance: textfield !important;
+    /* For Chrome, Safari, Edge, and Opera */
   }
   .non-printable-format input[type=number]::-webkit-inner-spin-button, .non-printable-format input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none !important;
@@ -33,12 +40,16 @@
     display: none !important;
     appearance: none !important;
     -webkit-appearance: none !important;
-    -moz-appearance: none !important; /* For Firefox */
+    -moz-appearance: none !important;
+    /* For Firefox */
   }
   .non-printable-format select {
-    appearance: none !important; /* Remove dropdown icon */
-    -webkit-appearance: none !important; /* For WebKit browsers */
-    -moz-appearance: none !important; /* For Firefox */
+    appearance: none !important;
+    /* Remove dropdown icon */
+    -webkit-appearance: none !important;
+    /* For WebKit browsers */
+    -moz-appearance: none !important;
+    /* For Firefox */
   }
   .buyer-details,
   .footer {
@@ -49,7 +60,8 @@
   }
   .buyer-details input,
   .buyer-details textarea {
-    width: 35rem !important; /* Keep column width consistent */
+    width: 35rem !important;
+    /* Keep column width consistent */
   }
   .footer .bank-details img {
     max-height: 15rem;

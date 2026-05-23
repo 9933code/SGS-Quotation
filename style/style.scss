@@ -496,6 +496,7 @@ body {
             }
 
             .right {
+                @include flex-parent(flex, column, center, space-between);
 
                 /* For Chrome, Safari, Edge, and Opera */
                 input[type="number"]::-webkit-inner-spin-button,
@@ -509,7 +510,8 @@ body {
                     -moz-appearance: textfield;
                 }
 
-                .sub-total {
+                .sub-total,
+                .sub-total-discount {
                     @include flex-parent(flex, row, flex-end, center);
                     border-bottom: 1px solid grey;
 
@@ -549,13 +551,14 @@ body {
                     }
                 }
 
-                .gst {
+                .gst,
+                .discount {
                     @include flex-parent(flex, row, flex-end, center);
                     border-bottom: 1px solid grey;
 
                     label {
                         text-align: left;
-                        width: 3rem;
+                        width: 5rem;
                         padding: 0.2rem;
 
                     }
@@ -584,11 +587,12 @@ body {
 
                         &:nth-of-type(2) {
                             text-align: right;
-                            width: 7rem;
+                            width: 5rem;
                         }
                     }
 
                 }
+
             }
 
         }

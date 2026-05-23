@@ -117,7 +117,7 @@ body .links:hover {
   background: transparent;
   margin-bottom: 0.1rem;
 }
-.main .buyer .buyer-details input:-moz-placeholder-shown {
+.main .buyer .buyer-details input:-moz-placeholder {
   border-color: #3498db;
   background-color: #f0f9ff;
   font-weight: bold;
@@ -175,7 +175,7 @@ body .links:hover {
   font-weight: bold;
   text-transform: uppercase;
 }
-.main .buyer .invoice-info .quotation .quotation-no input:-moz-placeholder-shown, .main .buyer .invoice-info .quotation .quotation-date input:-moz-placeholder-shown {
+.main .buyer .invoice-info .quotation .quotation-no input:-moz-placeholder, .main .buyer .invoice-info .quotation .quotation-date input:-moz-placeholder {
   border-color: #3498db;
   background-color: #f0f9ff;
   font-weight: bold;
@@ -194,7 +194,7 @@ body .links:hover {
   -webkit-appearance: none;
   border: none;
 }
-.main .buyer .invoice-info .quotation .quotation-no input[type=date]:-moz-placeholder-shown, .main .buyer .invoice-info .quotation .quotation-date input[type=date]:-moz-placeholder-shown {
+.main .buyer .invoice-info .quotation .quotation-no input[type=date]:-moz-placeholder, .main .buyer .invoice-info .quotation .quotation-date input[type=date]:-moz-placeholder {
   border-color: #3498db;
   background-color: #f0f9ff;
   font-weight: bold;
@@ -234,7 +234,7 @@ body .links:hover {
   border: none;
   font-weight: bold;
 }
-.main .buyer .invoice-info .contact-person .person input:-moz-placeholder-shown, .main .buyer .invoice-info .contact-person .contact input:-moz-placeholder-shown {
+.main .buyer .invoice-info .contact-person .person input:-moz-placeholder, .main .buyer .invoice-info .contact-person .contact input:-moz-placeholder {
   border-color: #3498db;
   background-color: #f0f9ff;
   font-weight: bold;
@@ -250,7 +250,7 @@ body .links:hover {
   min-height: 16rem;
   margin: 0.5rem 0rem;
   background-color: #fff;
-  border: 1px solid #006550;
+  border: 1px solid rgb(0, 101, 80.4013157895);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -361,7 +361,7 @@ body .links:hover {
 .main .table .styled-table textarea:focus {
   border-color: #009879;
 }
-.main .table .styled-table input:-moz-placeholder-shown, .main .table .styled-table textarea:-moz-placeholder-shown {
+.main .table .styled-table input:-moz-placeholder, .main .table .styled-table textarea:-moz-placeholder {
   border-color: #3498db;
   background-color: #f0f9ff;
 }
@@ -406,7 +406,7 @@ body .links:hover {
   border-radius: 50%;
 }
 .main .table:hover .new-btn .add-row-btn:hover {
-  background-color: #006550;
+  background-color: rgb(0, 101, 80.4013157895);
 }
 .main .table .new-btn {
   display: none;
@@ -458,31 +458,40 @@ body .links:hover {
   font-size: 0.7rem;
 }
 .main .table .summary .right {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
   /* For Chrome, Safari, Edge, and Opera */
-  /* For Firefox */
 }
 .main .table .summary .right input[type=number]::-webkit-inner-spin-button,
 .main .table .summary .right input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
+.main .table .summary .right {
+  /* For Firefox */
+}
 .main .table .summary .right input[type=number] {
   -moz-appearance: textfield;
 }
-.main .table .summary .right .sub-total {
+.main .table .summary .right .sub-total,
+.main .table .summary .right .sub-total-discount {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
   border-bottom: 1px solid grey;
 }
-.main .table .summary .right .sub-total label {
+.main .table .summary .right .sub-total label,
+.main .table .summary .right .sub-total-discount label {
   text-align: left;
   width: 7rem;
   font-weight: bold;
   padding: 0.2rem;
 }
-.main .table .summary .right .sub-total input {
+.main .table .summary .right .sub-total input,
+.main .table .summary .right .sub-total-discount input {
   text-align: right;
   border: none;
   width: 5rem;
@@ -508,40 +517,47 @@ body .links:hover {
   padding: 0.1rem 0.3rem;
   font-weight: bold;
 }
-.main .table .summary .right .gst {
+.main .table .summary .right .gst,
+.main .table .summary .right .discount {
   display: flex;
   flex-direction: row;
   align-items: flex-end;
   justify-content: center;
   border-bottom: 1px solid grey;
 }
-.main .table .summary .right .gst label {
+.main .table .summary .right .gst label,
+.main .table .summary .right .discount label {
   text-align: left;
-  width: 3rem;
+  width: 5rem;
   padding: 0.2rem;
 }
-.main .table .summary .right .gst span {
+.main .table .summary .right .gst span,
+.main .table .summary .right .discount span {
   text-align: center;
   width: 1rem;
   padding: 0.1rem 0rem;
 }
-.main .table .summary .right .gst input {
+.main .table .summary .right .gst input,
+.main .table .summary .right .discount input {
   border: none;
   padding: 0.1rem 0rem;
 }
-.main .table .summary .right .gst input:nth-of-type(1) {
+.main .table .summary .right .gst input:nth-of-type(1),
+.main .table .summary .right .discount input:nth-of-type(1) {
   text-align: right;
   width: 1rem;
 }
-.main .table .summary .right .gst input:nth-of-type(1)::after {
+.main .table .summary .right .gst input:nth-of-type(1)::after,
+.main .table .summary .right .discount input:nth-of-type(1)::after {
   content: "%";
   color: blue;
   border: 2px solid red;
   margin-left: 0px;
 }
-.main .table .summary .right .gst input:nth-of-type(2) {
+.main .table .summary .right .gst input:nth-of-type(2),
+.main .table .summary .right .discount input:nth-of-type(2) {
   text-align: right;
-  width: 7rem;
+  width: 5rem;
 }
 .main .footer {
   display: flex;
@@ -610,5 +626,5 @@ body .links:hover {
   font-weight: bold;
 }
 .actions .print-button:hover {
-  background-color: #006550;
+  background-color: rgb(0, 101, 80.4013157895);
 }/*# sourceMappingURL=style.css.map */
