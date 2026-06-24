@@ -112,7 +112,7 @@ document.getElementById('addRowBtn').addEventListener('click', function () {
   newRow.insertCell(3).innerHTML =
     '<div class="input-no non-printable-format"><input type="number" placeholder="Enter Qty"></div>';
   newRow.insertCell(4).innerHTML =
-    '<div class="non-printable-format"><select><option value="Pcs">Pcs</option><option value="Set">Set</option><option value="Meter">Meter</option><option value="Ltr">Ltr</option><option value="Unit">Unit</option><option value="Visit">Visit</option><option value="Kg">Kg</option></select></div>';
+    '<div class="non-printable-format"><select><option value="Pcs">Pcs</option><option value="Set">Set</option><option value="Meter">Meter</option><option value="Ft">Ft</option><option value="Ltr">Ltr</option><option value="Unit">Unit</option><option value="Visit">Visit</option><option value="Kg">Kg</option></select></div>';
   newRow.insertCell(5).innerHTML =
     '<div class="input-no non-printable-format"><input type="number" placeholder="Enter Rate" step="0.1"></div>';
   // No more id="amountN" — just a plain readonly input
@@ -136,6 +136,7 @@ function save() {
   let table_data = {};
 
   const quotation_no           = document.getElementsByName('quotation-no')[0].value.toUpperCase();
+  const head_title             = document.getElementById('head-title').innerHTML;
   const quotation_date         = document.getElementsByName('quotation-date')[0].value;
   const customer_name          = document.getElementsByName('customer-name')[0].value;
   const customer_details       = document.getElementsByName('customer-details')[0].innerHTML;
@@ -168,7 +169,7 @@ function save() {
 
   quotation_data = {
     ...quotation_data, [quotation_no]: {
-      quotation_no, quotation_date, customer_name, customer_details,
+      quotation_no, head_title, quotation_date, customer_name, customer_details,
       contact_person_name, contact_person_no,
       sub_total, discount_perc, discount, sub_total_discount,
       gst_perc, gst, total, terms_conditions,
@@ -185,6 +186,7 @@ document.getElementById('quotation-no').addEventListener('input', function () {
 
   if (Object.keys(quotation_data).includes(quotation_no)) {
     const q = quotation_data[quotation_no];
+    document.getElementById('head-title').innerHTML               = q['head_title'] || 'Quotation';
     document.getElementsByName('quotation-date')[0].value        = q['quotation_date'];
     document.getElementsByName('customer-name')[0].value         = q['customer_name'];
     document.getElementsByName('customer-details')[0].innerHTML  = q['customer_details'];
@@ -220,7 +222,7 @@ function addData(items) {
     newRow.insertCell(3).innerHTML =
       '<div class="input-no non-printable-format"><input type="number" placeholder="Enter Qty"></div>';
     newRow.insertCell(4).innerHTML =
-      '<div class="non-printable-format"><select><option value="Pcs">Pcs</option><option value="Set">Set</option><option value="Meter">Meter</option><option value="Ltr">Ltr</option><option value="Unit">Unit</option><option value="Visit">Visit</option><option value="Kg">Kg</option></select></div>';
+      '<div class="non-printable-format"><select><option value="Pcs">Pcs</option><option value="Set">Set</option><option value="Meter">Meter</option><option value="Ft">Ft</option><option value="Ltr">Ltr</option><option value="Unit">Unit</option><option value="Visit">Visit</option><option value="Kg">Kg</option></select></div>';
     newRow.insertCell(5).innerHTML =
       '<div class="input-no non-printable-format"><input type="number" placeholder="Enter Rate" step="0.1"></div>';
     newRow.insertCell(6).innerHTML =
